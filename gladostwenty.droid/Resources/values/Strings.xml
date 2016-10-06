@@ -1,5 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="Hello">Hello World, Click Me!</string>
-    <string name="ApplicationName">gladostwenty.droid</string>
+  <string name="Hello">Hello World, Click Me!</string>
+  <string name="ApplicationName">gladostwenty.Droid</string>
+  <string name="busy_default">Choose a reason</string>
+  <string-array name="busy_reason_list">
+    <item >Meeting </item>
+    <item >Lunch</item>
+    <item >Available</item>
+    <item >Busy</item>
+  </string-array>
+  <string name="number_default">Select Number</string>
+  <string-array name="number_array">
+    <item >1</item>
+    <item >2</item>
+    <item >3</item>
+    <item >4</item>
+    <item >5</item>
+    <item >6</item>
+    <item >7</item>
+    <item >8</item>
+  </string-array>
 </resources>

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+  <ImageView
+      android:src="@android:drawable/ic_menu_gallery"
+      android:layout_width="120dp"
+      android:layout_height="120dp"
+      android:id="@+id/imageView1" />
+  <TextView
+      android:id="@+id/label"
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="30dp"
+      android:layout_toRightOf="@id/imageView1"
+      android:textSize="48px"
+      android:textColor="#212121"
+      android:text="Contact 1" />
+  <TextView
+      android:id="@+id/label2"
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="10dp"
+      android:layout_toRightOf="@id/imageView1"
+      android:textSize="48px"
+      android:textColor="#212121"
+      android:layout_below="@id/label"
+      android:text="Contact 1 is requesting your status" />
+  <TextView
+      android:id="@+id/lblBusy"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/imageView1"
+      android:layout_marginTop="10dp"
+      android:layout_marginLeft="25dp"
+      android:textSize="48px"
+      android:textColor="#212121"
+      android:text="Busy ?" />
+  <TextView
+      android:id="@+id/lblReason"
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/lblBusy"
+      android:textColor="#212121"
+      android:layout_marginLeft="25dp"
+      android:layout_marginTop="25dp"
+      android:textSize="38px"
+      android:text="Reason" />
+  <TextView
+      android:id="@+id/lblReasonPicker"
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/lblReason"
+      android:textColor="#BDBDBD"
+      android:layout_marginLeft="25dp"
+      android:layout_marginTop="5dp"
+      android:textSize="48px"
+      android:text="Select a reason"
+      local:MvxBind="Text SelectedItem, Mode=OneWay" />
+  <TextView
+      android:id="@+id/lblAvailableIn"
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/lblReason"
+      android:textColor="#212121"
+      android:layout_marginLeft="25dp"
+      android:layout_marginTop="45dp"
+      android:textSize="38px"
+      android:text="Available In" />
+  <TextView
+      android:id="@+id/lblAvailableInPicker"
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/lblAvailableIn"
+      android:textColor="#BDBDBD"
+      android:layout_marginLeft="25dp"
+      android:layout_marginTop="5dp"
+      android:textSize="48px"
+      android:text="Select time in hours" />
+  <TextView
+      android:id="@+id/lblNote"
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/lblAvailableIn"
+      android:textColor="#212121"
+      android:layout_marginLeft="25dp"
+      android:layout_marginTop="45dp"
+      android:textSize="38px"
+      android:text="Notes" />
+  <EditText
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/lblNote"
+      android:textColor="#BDBDBD"
+      android:layout_marginLeft="22dp"
+      android:layout_marginTop="3dp"
+      android:textSize="48px"
+      android:id="@+id/txtNotes"
+      android:hint="Anything extra to say?"
+      local:MvxBind="Text Message, Mode=OneWayToSource" />
+  <TextView
+      android:id="@+id/lblAttachLocation"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/lblNote"
+      android:textColor="#212121"
+      android:layout_marginLeft="25dp"
+      android:layout_marginTop="65dp"
+      android:textSize="38px"
+      android:text="Attach Location?" />
+  <Button
+      android:id="@+id/btnSend"
+      android:text="Send"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="250dp"
+      android:layout_marginTop="40dp"
+      android:layout_below="@id/lblAttachLocation"
+      local:MvxBind="Click ButtonCommand" />
+  <Switch
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_toRightOf="@id/lblAttachLocation"
+      android:layout_below="@id/lblNote"
+      android:layout_marginLeft="200dp"
+      android:layout_marginTop="65dp"
+      android:id="@+id/swtAttachLocation" />
+  <Switch
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_above="@id/swtAttachLocation"
+      android:layout_toRightOf="@id/lblBusy"
+      android:layout_marginLeft="250dp"
+      android:layout_alignBaseline="@id/lblBusy"
+      android:id="@+id/swtBusy" />
+  <Spinner
+      android:prompt="@string/busy_default"
+      android:text="@string/busy_default"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/lblReason"
+      android:layout_marginLeft="300dp"
+      android:id="@+id/snrBusy"
+      android:spinnerMode="dialog" />
+  <Spinner
+      android:prompt="@string/number_default"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/lblAvailableIn"
+      android:layout_marginLeft="300dp"
+      android:id="@+id/snrNumberBusy"
+      android:text="@string/number_default"
+      android:spinnerMode="dialog" />
+</RelativeLayout>
