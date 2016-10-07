@@ -5,11 +5,13 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
 
-  <Button 
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="Load Data"
-    local:MvxBind="Click ButtonCommand"/>
+  <ProgressBar
+   android:id="@+id/progressBar1"
+   style="?android:attr/progressBarStyleLarge"
+   android:layout_width="wrap_content"
+   android:layout_height="wrap_content"
+   android:layout_centerHorizontal="true" 
+   local:MvxBind="Visible Loading"/>
 
   <Mvx.MvxListView
     android:layout_width="match_parent"

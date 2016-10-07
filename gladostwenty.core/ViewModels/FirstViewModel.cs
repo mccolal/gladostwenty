@@ -13,6 +13,18 @@ namespace gladostwenty.core.ViewModels
         : MvxViewModel
     {
 
+        private bool loading = true;
+
+        public bool Loading {
+            get {
+                return loading;
+            }
+            set {
+                loading = value;
+                RaisePropertyChanged(() => Loading);
+            }
+        }
+
         private ObservableCollection<user> users;
 
         public ObservableCollection<user> Users {
@@ -35,11 +47,9 @@ namespace gladostwenty.core.ViewModels
 
         public FirstViewModel() {
 
-            ButtonCommand = new MvxCommand(() => {
-                var dataService = Mvx.Resolve<IAzureDataService>();
-                dataService.Initialize();
-                getTable();
-            });
+            var dataService = Mvx.Resolve<IAzureDataService>();
+            dataService.Initialize();
+            getTable();
         }
 
         private async void getTable() {
@@ -47,6 +57,7 @@ namespace gladostwenty.core.ViewModels
             var c = await dataService.GetUserTable();
             c = c.Where(x => x.id != CurrentUser.id).ToList<user>();
             Users = new ObservableCollection<user>(c);
+            Loading = false;
         }
     }
 }
