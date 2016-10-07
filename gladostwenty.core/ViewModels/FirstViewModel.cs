@@ -49,8 +49,8 @@ namespace gladostwenty.core.ViewModels
             var dataService = Mvx.Resolve<IAzureDataService>();
             dataService.Initialize();
             getTable();
-            ContactSelectCommand = new MvxCommand(() => {
-                ShowViewModel<RequestStatusViewModel>();
+            ContactSelectCommand = new MvxCommand<user>((user) => {
+                ShowViewModel<RequestStatusViewModel>(user.id);
             });
         }
 
