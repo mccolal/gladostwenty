@@ -3,6 +3,7 @@ using gladostwenty.core.Services;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Platform;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Windows.Input;
 
 namespace gladostwenty.core.ViewModels
@@ -11,7 +12,16 @@ namespace gladostwenty.core.ViewModels
         : MvxViewModel
     {
 
-        private List<user> users { get; set; }
+        private ObservableCollection<user> users;
+
+        public ObservableCollection<user> Users {
+            get {
+                return users;
+            }
+            set {
+                SetProperty(ref users, value);
+            }
+        }
 
         private string _hello = "Hello MvvmCross";
         public string Hello
@@ -34,7 +44,7 @@ namespace gladostwenty.core.ViewModels
         private async void getTable() {
             var dataService = Mvx.Resolve<IAzureDataService>();
             var c = await dataService.GetUserTable();
-            users = c;
+            Users = new ObservableCollection<user>(c);
         }
     }
 }
