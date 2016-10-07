@@ -1,3 +1,4 @@
+using gladostwenty.core.Services;
 using MvvmCross.Platform.IoC;
 
 namespace gladostwenty.core
@@ -11,7 +12,7 @@ namespace gladostwenty.core
                 .AsInterfaces()
                 .RegisterAsLazySingleton();
 
-            RegisterAppStart<ViewModels.OnRequestViewModel>();
+            RegisterAppStart<ViewModels.FirstViewModel>();
         }
     }
 }
