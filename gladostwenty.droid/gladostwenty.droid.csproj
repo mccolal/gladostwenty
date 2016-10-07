@@ -122,6 +122,7 @@
     <Compile Include="Views\broadcastReceiver.cs" />
     <Compile Include="Views\constants.cs" />
     <Compile Include="Views\FirstView.cs" />
+    <Compile Include="Views\LoginView.cs" />
     <Compile Include="Views\OnRequest.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -136,6 +137,9 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\UserItemLayout.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\LoginView.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

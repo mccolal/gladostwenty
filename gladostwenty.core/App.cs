@@ -12,7 +12,7 @@ namespace gladostwenty.core
                 .AsInterfaces()
                 .RegisterAsLazySingleton();
 
-            RegisterAppStart<ViewModels.FirstViewModel>();
+            RegisterAppStart<ViewModels.LoginViewModel>();
         }
     }
 }
