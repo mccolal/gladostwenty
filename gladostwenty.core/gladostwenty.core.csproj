@@ -37,7 +37,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
-    <Compile Include="Converters\ContactLoadSpinnerConverter.cs" />
     <Compile Include="Models\CurrentUser.cs" />
     <Compile Include="Models\user.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -46,6 +45,7 @@
     <Compile Include="ViewModels\FirstViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\OnRequestViewModel.cs" />
+    <Compile Include="ViewModels\RequestStatusViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.WindowsAzure.Mobile, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">

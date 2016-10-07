@@ -124,6 +124,7 @@
     <Compile Include="Views\FirstView.cs" />
     <Compile Include="Views\LoginView.cs" />
     <Compile Include="Views\OnRequest.cs" />
+    <Compile Include="Views\RequestStatusView.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -140,6 +141,9 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\LoginView.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\RequestStatusView.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

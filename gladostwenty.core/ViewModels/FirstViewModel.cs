@@ -9,8 +9,7 @@ using System.Windows.Input;
 
 namespace gladostwenty.core.ViewModels
 {
-    public class FirstViewModel 
-        : MvxViewModel
+    public class FirstViewModel : MvxViewModel
     {
 
         private bool loading = true;
@@ -43,13 +42,16 @@ namespace gladostwenty.core.ViewModels
             set { SetProperty (ref _hello, value); }
         }
 
-        public ICommand ButtonCommand { get; set; }
+        public ICommand ContactSelectCommand { get; private set; }
 
         public FirstViewModel() {
 
             var dataService = Mvx.Resolve<IAzureDataService>();
             dataService.Initialize();
             getTable();
+            ContactSelectCommand = new MvxCommand(() => {
+                ShowViewModel<RequestStatusViewModel>();
+            });
         }
 
         private async void getTable() {
