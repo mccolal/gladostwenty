@@ -4,6 +4,7 @@ using MvvmCross.Core.ViewModels;
 using MvvmCross.Platform;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Windows.Input;
 
 namespace gladostwenty.core.ViewModels
@@ -44,6 +45,7 @@ namespace gladostwenty.core.ViewModels
         private async void getTable() {
             var dataService = Mvx.Resolve<IAzureDataService>();
             var c = await dataService.GetUserTable();
+            c = c.Where(x => x.id != CurrentUser.id).ToList<user>();
             Users = new ObservableCollection<user>(c);
         }
     }

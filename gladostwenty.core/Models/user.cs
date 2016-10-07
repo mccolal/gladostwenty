@@ -15,5 +15,10 @@ namespace gladostwenty.core.Models {
 
         public string email { get; set; }
 
+        public string FullName {
+            get {
+                return FirstName + " " + LastName;
+            }
+        }
     }
 }
