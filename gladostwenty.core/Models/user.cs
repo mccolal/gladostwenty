@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace gladostwenty.core.Models {
-    public class user {
+    public class User {
 
         public string id { get; set; }
 
@@ -13,7 +13,7 @@ namespace gladostwenty.core.Models {
 
         public string LastName { get; set; }
 
-        public string email { get; set; }
+        public string Email { get; set; }
 
         public string FullName {
             get {

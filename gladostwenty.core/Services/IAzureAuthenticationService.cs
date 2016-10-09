@@ -1,10 +1,13 @@
-﻿using System;
+﻿using gladostwenty.core.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace gladostwenty.core.Services {
-    public interface IAzureLoginService {
+    interface IAzureAuthenticationService {
+
+        Task<User> Authenticate();
     }
 }

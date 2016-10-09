@@ -24,9 +24,9 @@ namespace gladostwenty.core.ViewModels
             }
         }
 
-        private ObservableCollection<user> users;
+        private ObservableCollection<User> users;
 
-        public ObservableCollection<user> Users {
+        public ObservableCollection<User> Users {
             get {
                 return users;
             }
@@ -49,7 +49,7 @@ namespace gladostwenty.core.ViewModels
             var dataService = Mvx.Resolve<IAzureDataService>();
             dataService.Initialize();
             getTable();
-            ContactSelectCommand = new MvxCommand<user>((user) => {
+            ContactSelectCommand = new MvxCommand<User>((user) => {
                 ShowViewModel<RequestStatusViewModel>(user.id);
             });
         }
@@ -57,8 +57,8 @@ namespace gladostwenty.core.ViewModels
         private async void getTable() {
             var dataService = Mvx.Resolve<IAzureDataService>();
             var c = await dataService.GetUserTable();
-            c = c.Where(x => x.id != CurrentUser.id).ToList<user>();
-            Users = new ObservableCollection<user>(c);
+            c = c.Where(x => x.id != CurrentUser.id).ToList<User>();
+            Users = new ObservableCollection<User>(c);
             Loading = false;
         }
     }

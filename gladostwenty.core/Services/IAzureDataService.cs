@@ -11,6 +11,6 @@ namespace gladostwenty.core.Services {
 
         MobileServiceClient Initialize();
 
-        Task<List<user>> GetUserTable();
+        Task<List<User>> GetUserTable();
     }
 }

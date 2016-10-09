@@ -17,13 +17,13 @@ namespace gladostwenty.droid.Services {
 
         public static MobileServiceClient Client { get; private set; }
 
-        public Task<List<user>> GetUserTable() {
+        public Task<List<User>> GetUserTable() {
 
-            return Client.GetTable<user>().ToListAsync();
+            return Client.GetTable<User>().ToListAsync();
         }
 
         public MobileServiceClient Initialize() {
-            Client = new MobileServiceClient("https://gladostelstra.azurewebsites.net");
+            Client = new MobileServiceClient("http://hywglados.azurewebsites.net");
             CurrentPlatform.Init();
             return Client;
         }

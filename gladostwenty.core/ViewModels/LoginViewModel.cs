@@ -1,5 +1,7 @@
 ﻿using gladostwenty.core.Models;
+using gladostwenty.core.Services;
 using MvvmCross.Core.ViewModels;
+using MvvmCross.Platform;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -37,6 +39,9 @@ namespace gladostwenty.core.ViewModels {
             LoginCommand = new MvxCommand(() => {
                 if (Login()) {
                     CurrentUser.Authenticated = true;
+
+                    //Mvx.Resolve<IAzureAuthenticationService>().Authenticate();
+
                     ShowViewModel<FirstViewModel>();
                 } else {
                     Reset();

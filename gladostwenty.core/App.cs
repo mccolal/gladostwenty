@@ -1,4 +1,5 @@
 using gladostwenty.core.Services;
+using MvvmCross.Platform;
 using MvvmCross.Platform.IoC;
 
 namespace gladostwenty.core
@@ -11,6 +12,8 @@ namespace gladostwenty.core
                 .EndingWith("Service")
                 .AsInterfaces()
                 .RegisterAsLazySingleton();
+
+            Mvx.RegisterSingleton<IAzureAuthenticationService>(new AzureAuthenticationService());
 
             RegisterAppStart<ViewModels.LoginViewModel>();
         }

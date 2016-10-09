@@ -112,7 +112,7 @@ namespace gladostwenty
             //Create the notification
             var notification = new Notification(Android.Resource.Drawable.SymActionEmail, title);
 
-            //Auto-cancel will remove the notification once the user touches it
+            //Auto-cancel will remove the notification once the User touches it
             notification.Flags = NotificationFlags.AutoCancel;
 
             //Set the notification info
