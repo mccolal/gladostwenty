@@ -53,11 +53,11 @@ namespace gladostwenty.droid
 		public partial class Array
 		{
 			
-			// aapt resource value: 0x7f070000
-			public const int busy_reason_list = 2131165184;
+			// aapt resource value: 0x7f080000
+			public const int busy_reason_list = 2131230720;
 			
-			// aapt resource value: 0x7f070001
-			public const int number_array = 2131165185;
+			// aapt resource value: 0x7f080001
+			public const int number_array = 2131230721;
 			
 			static Array()
 			{
@@ -103,6 +103,28 @@ namespace gladostwenty.droid
 			}
 		}
 		
+		public partial class Color
+		{
+			
+			// aapt resource value: 0x7f070000
+			public const int main_color = 2131165184;
+			
+			// aapt resource value: 0x7f070001
+			public const int main_color_dark = 2131165185;
+			
+			// aapt resource value: 0x7f070002
+			public const int main_color_light = 2131165186;
+			
+			static Color()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Color()
+			{
+			}
+		}
+		
 		public partial class Drawable
 		{
 			
@@ -113,7 +135,10 @@ namespace gladostwenty.droid
 			public const int Icon = 2130837505;
 			
 			// aapt resource value: 0x7f020002
-			public const int splash = 2130837506;
+			public const int RoundedTextBox = 2130837506;
+			
+			// aapt resource value: 0x7f020003
+			public const int splash = 2130837507;
 			
 			static Drawable()
 			{
@@ -261,10 +286,13 @@ namespace gladostwenty.droid
 		{
 			
 			// aapt resource value: 0x7f060000
-			public const int LoginView = 2131099648;
+			public const int ApplicationTheme = 2131099648;
 			
 			// aapt resource value: 0x7f060001
-			public const int Theme_Splash = 2131099649;
+			public const int LoginViewTheme = 2131099649;
+			
+			// aapt resource value: 0x7f060002
+			public const int Theme_Splash = 2131099650;
 			
 			static Style()
 			{

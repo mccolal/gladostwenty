@@ -13,7 +13,7 @@ using MvvmCross.Droid.Views;
 
 namespace gladostwenty.droid.Views {
 
-    [Activity(Label = "View for LoginViewModel")]
+    [Activity(Label = "View for LoginViewModel", Theme = "@style/LoginViewTheme", WindowSoftInputMode = SoftInput.AdjustResize)]
     public class LoginView : MvxActivity{
 
         protected override void OnCreate(Bundle bundle) {

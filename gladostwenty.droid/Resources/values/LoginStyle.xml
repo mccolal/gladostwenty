@@ -1,6 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 
 <resources>
-  <style name="LoginView" parent="android:Theme.Light">
+  <style name="LoginViewTheme" parent="@style/ApplicationTheme">
+    <item name="android:windowNoTitle">true</item>
+    <item name="android:windowActionBar">false</item>
   </style>
 </resources>

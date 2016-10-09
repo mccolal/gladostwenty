@@ -3,35 +3,40 @@
     xmlns:local="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/main_color"
+    android:gravity="center">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#ffffff"
+        android:textSize="30sp"
+        android:text="Username" />
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/RoundedTextBox"
+        android:textSize="30sp"
+        local:MvxBind="Text Username, Mode=OneWayToSource" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:textColor="#ffffff"
+        android:textSize="30sp"
+        android:text="Password" />
 
-
-  <TextView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:hint="Username"
-    />
-
-  <EditText
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    local:MvxBind="Text Username, Mode=OneWayToSource"/>
-
-
-  <TextView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:hint="Password"/>
-    
-  <EditText
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    local:MvxBind="Text Username, Mode=TwoWay"/>
-  
-  <Button
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Login"
-    local:MvxBind="Click LoginCommand"/>
-
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:background="@drawable/RoundedTextBox"
+        android:inputType="textPassword"
+        local:MvxBind="Text Username, Mode=TwoWay" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Login"
+        local:MvxBind="Click LoginCommand" />
 </LinearLayout>
