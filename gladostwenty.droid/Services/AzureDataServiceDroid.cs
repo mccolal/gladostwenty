@@ -22,7 +22,9 @@ namespace gladostwenty.droid.Services {
 
         private string localDbName = "glados.db3";
 
-        public IMobileServiceSyncTable<User> UserTable { get; set; }
+        private IMobileServiceSyncTable<User> UserTable { get; set; }
+
+        private IMobileServiceSyncTable<Status> StatusTable { get; set; }
 
         public Task<List<User>> GetUserTable() {
 
@@ -34,9 +36,11 @@ namespace gladostwenty.droid.Services {
             CurrentPlatform.Init();
             
             UserTable = Client.GetSyncTable<User>();
+            StatusTable = Client.GetSyncTable<Status>();
 
             await InitLocalStoreAsync();
-            await SyncAsync();
+            await SyncUsersAsync();
+            await SyncStatusAsync();
 
             return Client;
         }
@@ -50,12 +54,13 @@ namespace gladostwenty.droid.Services {
             }
 
             var store = new MobileServiceSQLiteStore(path);
+            store.DefineTable<Status>();
             store.DefineTable<User>();
 
             await Client.SyncContext.InitializeAsync(store);
         }
 
-        public async Task SyncAsync() {
+        public async Task SyncUsersAsync() {
             try {
                 await Client.SyncContext.PushAsync();
                 await UserTable.PullAsync("allUsers", UserTable.CreateQuery().Where(u => u.id != CurrentUser.id)) ;
@@ -63,5 +68,20 @@ namespace gladostwenty.droid.Services {
                 
             }
         }
+
+        public async Task SyncStatusAsync() {
+            try {
+                
+                await Client.SyncContext.PushAsync();
+                await StatusTable.PullAsync("allMyStatuses", StatusTable.CreateQuery());
+            } catch(Exception e) {
+
+            }
+        }
+
+        public Task<List<Status>> GetStatusTable() {
+            return StatusTable.ToListAsync();
+        }
+
     }
 }

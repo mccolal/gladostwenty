@@ -242,7 +242,13 @@ namespace gladostwenty.droid
 			public const int SplashScreen = 2130903045;
 			
 			// aapt resource value: 0x7f030006
-			public const int UserItemLayout = 2130903046;
+			public const int StatusItemLayout = 2130903046;
+			
+			// aapt resource value: 0x7f030007
+			public const int StatusListView = 2130903047;
+			
+			// aapt resource value: 0x7f030008
+			public const int UserItemLayout = 2130903048;
 			
 			static Layout()
 			{

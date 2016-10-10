@@ -146,6 +146,7 @@
     <Compile Include="Views\LoginView.cs" />
     <Compile Include="Views\OnRequest.cs" />
     <Compile Include="Views\RequestStatusView.cs" />
+    <Compile Include="Views\StatusListView.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -154,7 +155,9 @@
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <AndroidResource Include="Resources\layout\SplashScreen.axml" />
-    <AndroidResource Include="Resources\layout\FirstView.axml" />
+    <AndroidResource Include="Resources\layout\FirstView.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
     <AndroidResource Include="Resources\layout\OnRequest.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
@@ -168,6 +171,12 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\ContactDetailView.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\StatusListView.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\StatusItemLayout.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
