@@ -37,7 +37,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
+    <Compile Include="Interfaces\IGeoCoder.cs" />
     <Compile Include="Models\CurrentUser.cs" />
+    <Compile Include="Models\GeoLocation.cs" />
     <Compile Include="Models\Status.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -49,6 +51,7 @@
     <Compile Include="ViewModels\ContactDetailViewModel.cs" />
     <Compile Include="ViewModels\FirstViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
+    <Compile Include="ViewModels\MapViewModel.cs" />
     <Compile Include="ViewModels\OnRequestViewModel.cs" />
     <Compile Include="ViewModels\RequestStatusViewModel.cs" />
   </ItemGroup>

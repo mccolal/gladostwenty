@@ -5,6 +5,8 @@ using MvvmCross.Platform.Platform;
 using MvvmCross.Platform;
 using gladostwenty.core.Services;
 using gladostwenty.droid.Services;
+using gladostwenty.core.Interfaces;
+using gladostwenty.droid.Maps;
 
 namespace gladostwenty.droid
 {
@@ -24,6 +26,11 @@ namespace gladostwenty.droid
         protected override IMvxTrace CreateDebugTrace()
         {
             return new DebugTrace();
+        }
+        protected override void InitializeFirstChance()
+        {
+            Mvx.LazyConstructAndRegisterSingleton<IGeoCoder, GeoCoder>();
+            base.InitializeFirstChance();
         }
     }
 }
