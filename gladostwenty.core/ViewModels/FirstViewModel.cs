@@ -35,30 +35,20 @@ namespace gladostwenty.core.ViewModels
             }
         }
 
-        private string _hello = "Hello MvvmCross";
-        public string Hello
-        { 
-            get { return _hello; }
-            set { SetProperty (ref _hello, value); }
-        }
-
         public ICommand ContactSelectCommand { get; private set; }
 
         public FirstViewModel() {
 
-            var dataService = Mvx.Resolve<IAzureDataService>();
-            dataService.Initialize();
-            getTable();
+            InitDataStorage();
             ContactSelectCommand = new MvxCommand<User>((user) => {
                 ShowViewModel<RequestStatusViewModel>(user.id);
             });
         }
 
-        private async void getTable() {
+        private async void InitDataStorage() {
             var dataService = Mvx.Resolve<IAzureDataService>();
-            var c = await dataService.GetUserTable();
-            c = c.Where(x => x.id != CurrentUser.id).ToList<User>();
-            Users = new ObservableCollection<User>(c);
+            await dataService.Initialize();
+            Users = new ObservableCollection<User>(await dataService.GetUserTable());
             Loading = false;
         }
     }

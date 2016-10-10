@@ -38,11 +38,15 @@
   <ItemGroup>
     <Compile Include="App.cs" />
     <Compile Include="Models\CurrentUser.cs" />
+    <Compile Include="Models\Status.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\AzureAuthenticationService.cs" />
     <Compile Include="Services\IAzureAuthenticationService.cs" />
     <Compile Include="Services\IAzureDataService.cs" />
+    <Compile Include="Services\IStatusCollectionService.cs" />
+    <Compile Include="Services\StatusCollectionService.cs" />
+    <Compile Include="ViewModels\ContactDetailViewModel.cs" />
     <Compile Include="ViewModels\FirstViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\OnRequestViewModel.cs" />

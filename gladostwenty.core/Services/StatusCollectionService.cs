@@ -1,16 +1,16 @@
 ﻿using gladostwenty.core.Models;
-using Microsoft.WindowsAzure.MobileServices;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace gladostwenty.core.Services {
-    public interface IAzureDataService {
+    public class StatusCollectionService : IStatusCollectionService{
 
-        Task<MobileServiceClient> Initialize();
+        public void AddNewStatus(Status status) {
 
-        Task<List<User>> GetUserTable();
+        }
     }
 }
