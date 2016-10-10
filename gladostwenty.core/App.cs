@@ -15,7 +15,7 @@ namespace gladostwenty.core
 
             Mvx.RegisterSingleton<IAzureAuthenticationService>(new AzureAuthenticationService());
 
-            RegisterAppStart<ViewModels.MapViewModel>();
+            RegisterAppStart<ViewModels.LoginViewModel>();
         }
     }
 }
