@@ -88,5 +88,8 @@ namespace gladostwenty.droid.Services {
             //return await StatusTable.ToListAsync();
         }
 
+        public async Task<User> GetUser(string id) {
+            return await UserTable.LookupAsync(id);
+        }
     }
 }

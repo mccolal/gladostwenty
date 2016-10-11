@@ -14,5 +14,7 @@ namespace gladostwenty.core.Services {
         Task<List<User>> GetUserTable();
 
         Task<List<Status>> GetStatusTable();
+
+        Task<User> GetUser(string id);
     }
 }
