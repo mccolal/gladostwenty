@@ -5,9 +5,10 @@ using MvvmCross.Droid.Views;
 namespace gladostwenty.droid
 {
     [Activity(
-        Label = "gladostwenty.droid"
+        Label = "Glados"
         , MainLauncher = true
         , Theme = "@style/Theme.Splash"
+        , Icon ="@drawable/Icon"
         , NoHistory = true
         , ScreenOrientation = ScreenOrientation.Portrait)]
     public class SplashScreen : MvxSplashScreenActivity

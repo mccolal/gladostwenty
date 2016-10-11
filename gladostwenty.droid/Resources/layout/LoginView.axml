@@ -4,12 +4,13 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/main_color"
+    android:background="@drawable/background"
     android:gravity="center">
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="#ffffff"
+        android:fontFamily="sans-serif"
         android:textSize="30sp"
         android:text="Username" />
     <EditText
@@ -25,7 +26,6 @@
         android:textColor="#ffffff"
         android:textSize="30sp"
         android:text="Password" />
-
     <EditText
         android:layout_width="300dp"
         android:layout_height="wrap_content"
@@ -37,6 +37,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
+        android:background="@color/main_color_dark"
+        android:textColor="#fff"
         android:text="Login"
         local:MvxBind="Click LoginCommand" />
 </LinearLayout>
