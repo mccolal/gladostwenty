@@ -13,12 +13,18 @@ namespace gladostwenty.core.ViewModels {
 
         public class NavParameters {
             public string Id { get; set; }
+
+            public string FirstName { get; set; }
+
+            public string LastName { get; set; }
+
+            public string Email { get; set; }
+
         }
 
-        private User contact { get; set; }
+        private NavParameters contact { get; set; }
 
-
-        public User Contact {
+        public NavParameters Contact {
             get {
                 return contact;
             }
@@ -28,17 +34,13 @@ namespace gladostwenty.core.ViewModels {
             }
         }
 
-
         public void Init(NavParameters contact) {
-            LoadContact(contact.Id);
+            Contact = contact;
+            LoadStatus(Contact.Id);
         }
 
-        private async void LoadContact(string id) {
+        private async void LoadStatus(string id) {
 
-            var dataService = Mvx.Resolve<IAzureDataService>();
-            await dataService.Initialize();
-            Contact = await dataService.GetUser(id);
-            var a = Contact;
         }
     }
 }

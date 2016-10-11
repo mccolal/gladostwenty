@@ -41,7 +41,10 @@ namespace gladostwenty.core.ViewModels
 
             InitDataStorage();
             ContactSelectCommand = new MvxCommand<User>((u) => {
-                ShowViewModel<ContactDetailViewModel>(new ContactDetailViewModel.NavParameters { Id = u.id });
+                ShowViewModel<ContactDetailViewModel>(
+                    new ContactDetailViewModel.NavParameters {
+                        Id = u.id, FirstName = u.FirstName, LastName = u.LastName, Email = u.Email
+                    });
             });
         }
 
