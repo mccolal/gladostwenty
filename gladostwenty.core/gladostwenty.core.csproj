@@ -54,6 +54,7 @@
     <Compile Include="ViewModels\MapViewModel.cs" />
     <Compile Include="ViewModels\OnRequestViewModel.cs" />
     <Compile Include="ViewModels\RequestStatusViewModel.cs" />
+    <Compile Include="ViewModels\StatusListViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.WindowsAzure.Mobile, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">

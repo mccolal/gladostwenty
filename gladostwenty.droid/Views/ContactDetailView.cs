@@ -9,8 +9,16 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using MvvmCross.Droid.Views;
 
 namespace gladostwenty.droid.Views {
-    class ContactDetailView {
+
+    [Activity(Label ="Contact Detail")]
+    public class ContactDetailView : MvxActivity {
+
+        protected override void OnCreate(Bundle bundle) {
+            base.OnCreate(bundle);
+            SetContentView(Resource.Layout.ContactDetailView);
+        }
     }
 }

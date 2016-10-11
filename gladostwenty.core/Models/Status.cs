@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace gladostwenty.core.Models {
     public class Status {
 
-        public string Id { get; set; }
+        public string id { get; set; }
 
         public string ToId { get; set; }
 
@@ -15,10 +15,8 @@ namespace gladostwenty.core.Models {
 
         public string Message { get; set; }
 
-        public bool Read { get; set; }
+        public bool Seen { get; set; }
 
-        public string Lat { get; set; }
-
-        public string Long { get; set; }
+        public bool Request { get; set; }
     }
 }

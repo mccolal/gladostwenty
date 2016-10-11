@@ -22,11 +22,13 @@ namespace gladostwenty.droid.Services {
 
         private string localDbName = "glados.db3";
 
-        public IMobileServiceSyncTable<User> UserTable { get; set; }
+        private IMobileServiceSyncTable<User> UserTable { get; set; }
+
+        private IMobileServiceSyncTable<Status> StatusTable { get; set; }
 
         public Task<List<User>> GetUserTable() {
 
-            return UserTable.ToListAsync();
+            return UserTable.Where(u => u.id != CurrentUser.id).ToListAsync();
         }
 
         public async Task<MobileServiceClient> Initialize() {
@@ -34,9 +36,11 @@ namespace gladostwenty.droid.Services {
             CurrentPlatform.Init();
             
             UserTable = Client.GetSyncTable<User>();
+            StatusTable = Client.GetSyncTable<Status>();
 
             await InitLocalStoreAsync();
-            await SyncAsync();
+            await SyncStatusAsync();
+            await SyncUsersAsync();
 
             return Client;
         }
@@ -50,18 +54,42 @@ namespace gladostwenty.droid.Services {
             }
 
             var store = new MobileServiceSQLiteStore(path);
+            store.DefineTable<Status>();
             store.DefineTable<User>();
 
             await Client.SyncContext.InitializeAsync(store);
         }
 
-        public async Task SyncAsync() {
+        public async Task SyncUsersAsync() {
             try {
                 await Client.SyncContext.PushAsync();
                 await UserTable.PullAsync("allUsers", UserTable.CreateQuery().Where(u => u.id != CurrentUser.id)) ;
             }catch(Exception e) {
                 
             }
+        }
+
+        public async Task SyncStatusAsync() {
+            try {
+                
+                await Client.SyncContext.PushAsync();
+                await StatusTable.PullAsync("allStatuses", StatusTable.CreateQuery().Where(u => u.ToId == CurrentUser.id));
+                var a = StatusTable;
+            } catch(Exception e) {
+
+            }
+        }
+
+        public async Task<List<Status>> GetStatusTable() {
+
+
+            return await Client.GetTable<Status>().Where(u => u.ToId == CurrentUser.id).ToListAsync(); ;
+            
+            //return await StatusTable.ToListAsync();
+        }
+
+        public async Task<User> GetUser(string id) {
+            return await UserTable.LookupAsync(id);
         }
     }
 }

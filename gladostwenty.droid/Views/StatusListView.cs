@@ -12,10 +12,13 @@ using Android.Widget;
 using MvvmCross.Droid.Views;
 
 namespace gladostwenty.droid.Views {
+
     [Activity(Label = "StatusListView")]
     public class StatusListView : MvxActivity {
-        protected override void OnCreate(Bundle savedInstanceState) {
-            base.OnCreate(savedInstanceState);
+
+
+        protected override void OnCreate(Bundle bundle) {
+            base.OnCreate(bundle);
 
             SetContentView(Resource.Layout.StatusListView);
         }

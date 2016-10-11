@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 namespace gladostwenty.core.ViewModels {
     public class StatusListViewModel : MvxViewModel{
 
+
         private ObservableCollection<Status> statuses;
 
         public ObservableCollection<Status> Statuses {
@@ -24,13 +25,17 @@ namespace gladostwenty.core.ViewModels {
         }
 
         public StatusListViewModel() {
-
-            InitializeList();
+            Initialize();
         }
 
-        private async void InitializeList() {
+        private async void Initialize() {
 
             var dataService = Mvx.Resolve<IAzureDataService>();
+
+            //var a = await dataService.GetStatusTable();
+
+            //Statuses = new ObservableCollection<Status>(a);
+
             Statuses = new ObservableCollection<Status>(await dataService.GetStatusTable());
         }
     }

@@ -1,7 +1,125 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
+    <TextView
+        android:id="@+id/lblFirstName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="25dp"
+        android:textSize="38px"
+        android:textColor="#212121"
+        android:text="First Name" />
+    <TextView
+        android:id="@+id/fldFirstName"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lblFirstName"
+        android:textColor="#212121"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="10dp"
+        android:textSize="48px"
+        local:MvxBind="Text Contact.FirstName"/>
+    <TextView
+        android:id="@+id/lblLastName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fldFirstName"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="25dp"
+        android:textSize="38px"
+        android:textColor="#212121"
+        android:text="Last Name" />
+    <TextView
+        android:id="@+id/fldLastName"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lblLastName"
+        android:textColor="#212121"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="10dp"
+        android:textSize="48px"
+        local:MvxBind="Text Contact.LastName"/>
+    <TextView
+        android:id="@+id/lblGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fldLastName"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="25dp"
+        android:textSize="38px"
+        android:textColor="#212121"
+        android:text="Group" />
+    <EditText
+        android:id="@+id/fldGroup"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lblGroup"
+        android:textColor="#212121"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="10dp"
+        android:textSize="48px"
+        android:text="group"/>
+    <TextView
+        android:id="@+id/lblEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fldGroup"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="25dp"
+        android:textSize="38px"
+        android:textColor="#212121"
+        android:text="Email" />
+    <TextView
+        android:id="@+id/fldEmail"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lblEmail"
+        android:textColor="#212121"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="10dp"
+        android:textSize="48px"
+        local:MvxBind="Text Contact.Email" />
+    <TextView
+        android:id="@+id/lblContactNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fldEmail"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="25dp"
+        android:textSize="38px"
+        android:textColor="#212121"
+        android:text="Contact Number" />
+    <TextView
+        android:id="@+id/fldContactNumber"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lblContactNumber"
+        android:textColor="#212121"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="10dp"
+        android:textSize="48px"
+        android:text="0412345678" />
+    <RelativeLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="bottom">
+        <Button
+            android:id="@+id/btnRequest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:text="Send Request" />
+        <Button
+            android:id="@+id/btnDone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="Done" />
+    </RelativeLayout>
 </LinearLayout>
