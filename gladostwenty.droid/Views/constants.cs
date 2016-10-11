@@ -15,7 +15,7 @@ namespace gladostwenty
     public static class Constants
     {
         public const string SenderID = "9870008865"; // Google API Project Number
-        public const string ListenConnectionString = "Endpoint=sb://glados.servicebus.windows.net/;SharedAccessKeyName=DefaultListenSharedAccessSignature;SharedAccessKey=sOoceOn3HsLNBz/Q/Wz1YkLEGcP/PA24MOBJZyNolFM=";
+        public const string ListenConnectionString = "Endpoint=sb://gladosnotificationhub.servicebus.windows.net/;SharedAccessKeyName=DefaultListenSharedAccessSignature;SharedAccessKey=mNw84FrRLudD+kEQosBWjJsbwAcvDIDEUZLiAAUjHCE=";
         public const string NotificationHubName = "gladosnhub";
     }
 }
