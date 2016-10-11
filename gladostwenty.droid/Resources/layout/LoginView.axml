@@ -6,38 +6,30 @@
     android:layout_height="match_parent"
     android:background="@drawable/background"
     android:gravity="center">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#ffffff"
-        android:fontFamily="sans-serif"
-        android:textSize="30sp"
-        android:text="Username" />
     <EditText
         android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/RoundedTextBox"
-        android:textSize="30sp"
-        local:MvxBind="Text Username, Mode=OneWayToSource" />
-    <TextView
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:textColor="#ffffff"
+        android:paddingLeft="5dp"
+        android:background="#fff"
         android:textSize="30sp"
-        android:text="Password" />
+        local:MvxBind="Text Username, Mode=OneWayToSource" 
+        android:hint="Username"/>
     <EditText
         android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:paddingLeft="5dp"
         android:textSize="30sp"
-        android:background="@drawable/RoundedTextBox"
+        android:background="#fff"
         android:inputType="textPassword"
-        local:MvxBind="Text Username, Mode=TwoWay" />
+        local:MvxBind="Text Username, Mode=TwoWay" 
+        android:hint="Password"/>
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:background="@color/main_color_dark"
+        android:layout_marginTop="30dp"
+        android:background="#1565C0"
         android:textColor="#fff"
         android:text="Login"
         local:MvxBind="Click LoginCommand" />
