@@ -16,5 +16,7 @@ namespace gladostwenty.core.Models {
         public string Message { get; set; }
 
         public bool Seen { get; set; }
+
+        public bool Request { get; set; }
     }
 }

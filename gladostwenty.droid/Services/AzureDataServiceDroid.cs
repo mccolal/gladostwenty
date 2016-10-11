@@ -28,7 +28,7 @@ namespace gladostwenty.droid.Services {
 
         public Task<List<User>> GetUserTable() {
 
-            return UserTable.ToListAsync();
+            return UserTable.Where(u => u.id != CurrentUser.id).ToListAsync();
         }
 
         public async Task<MobileServiceClient> Initialize() {
@@ -39,8 +39,8 @@ namespace gladostwenty.droid.Services {
             StatusTable = Client.GetSyncTable<Status>();
 
             await InitLocalStoreAsync();
-            await SyncUsersAsync();
             await SyncStatusAsync();
+            await SyncUsersAsync();
 
             return Client;
         }
@@ -73,14 +73,19 @@ namespace gladostwenty.droid.Services {
             try {
                 
                 await Client.SyncContext.PushAsync();
-                await StatusTable.PullAsync("allMyStatuses", StatusTable.CreateQuery());
+                await StatusTable.PullAsync("allStatuses", StatusTable.CreateQuery().Where(u => u.ToId == CurrentUser.id));
+                var a = StatusTable;
             } catch(Exception e) {
 
             }
         }
 
-        public Task<List<Status>> GetStatusTable() {
-            return StatusTable.ToListAsync();
+        public async Task<List<Status>> GetStatusTable() {
+
+
+            return await Client.GetTable<Status>().Where(u => u.ToId == CurrentUser.id).ToListAsync(); ;
+            
+            //return await StatusTable.ToListAsync();
         }
 
     }

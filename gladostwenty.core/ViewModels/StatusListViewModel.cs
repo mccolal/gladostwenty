@@ -29,7 +29,13 @@ namespace gladostwenty.core.ViewModels {
         }
 
         private async void Initialize() {
+
             var dataService = Mvx.Resolve<IAzureDataService>();
+
+            //var a = await dataService.GetStatusTable();
+
+            //Statuses = new ObservableCollection<Status>(a);
+
             Statuses = new ObservableCollection<Status>(await dataService.GetStatusTable());
         }
     }

@@ -12,6 +12,8 @@ using Android.Widget;
 using MvvmCross.Droid.Views;
 
 namespace gladostwenty.droid.Views {
+
+    [Activity(Label = "StatusListView")]
     public class StatusListView : MvxActivity {
 
 

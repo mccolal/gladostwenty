@@ -40,7 +40,7 @@ namespace gladostwenty.core.ViewModels
         public FirstViewModel() {
 
             InitDataStorage();
-            ContactSelectCommand = new MvxCommand<User>((user) => {
+            ContactSelectCommand = new MvxCommand<User>((u) => {
                 ShowViewModel<StatusListViewModel>();
             });
         }
