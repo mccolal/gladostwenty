@@ -14,6 +14,9 @@ using Microsoft.WindowsAzure.MobileServices;
 using System.IO;
 using Microsoft.WindowsAzure.MobileServices.SQLiteStore;
 using Microsoft.WindowsAzure.MobileServices.Sync;
+using System.Net.Http;
+using Newtonsoft.Json.Linq;
+using System.Threading;
 
 namespace gladostwenty.droid.Services {
     class AzureDataServiceDroid : core.Services.IAzureDataService {
@@ -36,10 +39,10 @@ namespace gladostwenty.droid.Services {
             CurrentPlatform.Init();
             
             UserTable = Client.GetSyncTable<User>();
-            StatusTable = Client.GetSyncTable<Status>();
+            //StatusTable = Client.GetSyncTable<Status>();
 
             await InitLocalStoreAsync();
-            await SyncStatusAsync();
+            //await SyncStatusAsync();
             await SyncUsersAsync();
 
             return Client;
@@ -54,7 +57,7 @@ namespace gladostwenty.droid.Services {
             }
 
             var store = new MobileServiceSQLiteStore(path);
-            store.DefineTable<Status>();
+            //store.DefineTable<Status>();
             store.DefineTable<User>();
 
             await Client.SyncContext.InitializeAsync(store);
@@ -63,7 +66,7 @@ namespace gladostwenty.droid.Services {
         public async Task SyncUsersAsync() {
             try {
                 await Client.SyncContext.PushAsync();
-                await UserTable.PullAsync("allUsers", UserTable.CreateQuery().Where(u => u.id != CurrentUser.id)) ;
+                await UserTable.PullAsync("AllUsers", UserTable.CreateQuery()) ;
             }catch(Exception e) {
                 
             }
@@ -90,6 +93,18 @@ namespace gladostwenty.droid.Services {
 
         public async Task<User> GetUser(string id) {
             return await UserTable.LookupAsync(id);
+        }
+
+        public async void SendStatusRequest(string to, string from, string msg) {
+            Dictionary<string, string> param = new Dictionary<string, string>();
+
+            param.Add("to", to);
+            param.Add("from", from);
+            param.Add("msg", msg);
+
+            CancellationTokenSource cts = new CancellationTokenSource();
+           
+            await Client.InvokeApiAsync("StatusAPI", HttpMethod.Post, param, cts.Token);
         }
     }
 }

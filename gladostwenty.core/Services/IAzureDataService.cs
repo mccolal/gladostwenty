@@ -16,5 +16,7 @@ namespace gladostwenty.core.Services {
         Task<List<Status>> GetStatusTable();
 
         Task<User> GetUser(string id);
+
+        void SendStatusRequest(string to, string from, string msg);
     }
 }

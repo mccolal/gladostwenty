@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace gladostwenty.core.ViewModels {
     public class ContactDetailViewModel : MvxViewModel{
@@ -19,6 +20,8 @@ namespace gladostwenty.core.ViewModels {
             public string LastName { get; set; }
 
             public string Email { get; set; }
+
+            public string Phone { get; set; }
 
         }
 
@@ -34,13 +37,16 @@ namespace gladostwenty.core.ViewModels {
             }
         }
 
+        public ICommand SendRequestCommand { get; set; }
+
         public void Init(NavParameters contact) {
             Contact = contact;
-            LoadStatus(Contact.Id);
         }
 
-        private async void LoadStatus(string id) {
-
+        public ContactDetailViewModel() {
+            SendRequestCommand = new MvxCommand(() => {
+                Mvx.Resolve<IAzureDataService>().SendStatusRequest(Contact.Id, CurrentUser.id, "Test");
+            });
         }
     }
 }
