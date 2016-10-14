@@ -135,25 +135,28 @@ namespace gladostwenty.droid
 			public const int background = 2130837504;
 			
 			// aapt resource value: 0x7f020001
-			public const int ic_launcher = 2130837505;
+			public const int ContactListItem = 2130837505;
 			
 			// aapt resource value: 0x7f020002
-			public const int Icon = 2130837506;
+			public const int ic_launcher = 2130837506;
 			
 			// aapt resource value: 0x7f020003
-			public const int RoundedTextBox = 2130837507;
+			public const int Icon = 2130837507;
 			
 			// aapt resource value: 0x7f020004
-			public const int splash = 2130837508;
+			public const int RoundedTextBox = 2130837508;
 			
 			// aapt resource value: 0x7f020005
-			public const int splashscreen = 2130837509;
+			public const int splash = 2130837509;
 			
 			// aapt resource value: 0x7f020006
-			public const int splashscreenglados = 2130837510;
+			public const int splashscreen = 2130837510;
 			
 			// aapt resource value: 0x7f020007
-			public const int telstralogo = 2130837511;
+			public const int splashscreenglados = 2130837511;
+			
+			// aapt resource value: 0x7f020008
+			public const int telstralogo = 2130837512;
 			
 			static Drawable()
 			{
@@ -174,92 +177,86 @@ namespace gladostwenty.droid
 			// aapt resource value: 0x7f050001
 			public const int MvxBindingTagUnique = 2131034113;
 			
-			// aapt resource value: 0x7f05000d
-			public const int btnDone = 2131034125;
-			
-			// aapt resource value: 0x7f05000c
-			public const int btnRequest = 2131034124;
-			
-			// aapt resource value: 0x7f05001a
-			public const int btnSend = 2131034138;
-			
 			// aapt resource value: 0x7f05000b
-			public const int fldContactNumber = 2131034123;
+			public const int btnDone = 2131034123;
+			
+			// aapt resource value: 0x7f05000a
+			public const int btnRequest = 2131034122;
+			
+			// aapt resource value: 0x7f050018
+			public const int btnSend = 2131034136;
 			
 			// aapt resource value: 0x7f050009
-			public const int fldEmail = 2131034121;
+			public const int fldContactNumber = 2131034121;
+			
+			// aapt resource value: 0x7f050007
+			public const int fldEmail = 2131034119;
 			
 			// aapt resource value: 0x7f050003
 			public const int fldFirstName = 2131034115;
 			
-			// aapt resource value: 0x7f050007
-			public const int fldGroup = 2131034119;
-			
 			// aapt resource value: 0x7f050005
 			public const int fldLastName = 2131034117;
 			
+			// aapt resource value: 0x7f05000d
+			public const int imageView1 = 2131034125;
+			
+			// aapt resource value: 0x7f05000e
+			public const int label = 2131034126;
+			
 			// aapt resource value: 0x7f05000f
-			public const int imageView1 = 2131034127;
+			public const int label2 = 2131034127;
+			
+			// aapt resource value: 0x7f050017
+			public const int lblAttachLocation = 2131034135;
+			
+			// aapt resource value: 0x7f050013
+			public const int lblAvailableIn = 2131034131;
+			
+			// aapt resource value: 0x7f050014
+			public const int lblAvailableInPicker = 2131034132;
 			
 			// aapt resource value: 0x7f050010
-			public const int label = 2131034128;
-			
-			// aapt resource value: 0x7f050011
-			public const int label2 = 2131034129;
-			
-			// aapt resource value: 0x7f050019
-			public const int lblAttachLocation = 2131034137;
-			
-			// aapt resource value: 0x7f050015
-			public const int lblAvailableIn = 2131034133;
-			
-			// aapt resource value: 0x7f050016
-			public const int lblAvailableInPicker = 2131034134;
-			
-			// aapt resource value: 0x7f050012
-			public const int lblBusy = 2131034130;
-			
-			// aapt resource value: 0x7f05000a
-			public const int lblContactNumber = 2131034122;
+			public const int lblBusy = 2131034128;
 			
 			// aapt resource value: 0x7f050008
-			public const int lblEmail = 2131034120;
+			public const int lblContactNumber = 2131034120;
+			
+			// aapt resource value: 0x7f050006
+			public const int lblEmail = 2131034118;
 			
 			// aapt resource value: 0x7f050002
 			public const int lblFirstName = 2131034114;
 			
-			// aapt resource value: 0x7f050006
-			public const int lblGroup = 2131034118;
-			
 			// aapt resource value: 0x7f050004
 			public const int lblLastName = 2131034116;
 			
-			// aapt resource value: 0x7f050017
-			public const int lblNote = 2131034135;
+			// aapt resource value: 0x7f050015
+			public const int lblNote = 2131034133;
 			
-			// aapt resource value: 0x7f050013
-			public const int lblReason = 2131034131;
+			// aapt resource value: 0x7f050011
+			public const int lblReason = 2131034129;
 			
-			// aapt resource value: 0x7f050014
-			public const int lblReasonPicker = 2131034132;
+			// aapt resource value: 0x7f050012
+			public const int lblReasonPicker = 2131034130;
 			
-			// aapt resource value: 0x7f05000e
-			public const int progressBar1 = 2131034126;
-			
-			// aapt resource value: 0x7f05001d
-			public const int snrBusy = 2131034141;
-			
-			// aapt resource value: 0x7f05001e
-			public const int snrNumberBusy = 2131034142;
+			// aapt resource value: 0x7f05000c
+			public const int progressBar1 = 2131034124;
 			
 			// aapt resource value: 0x7f05001b
-			public const int swtAttachLocation = 2131034139;
+			public const int snrBusy = 2131034139;
 			
 			// aapt resource value: 0x7f05001c
-			public const int swtBusy = 2131034140;
+			public const int snrNumberBusy = 2131034140;
 			
-			// aapt resource value: 0x7f050018
-			public const int txtNotes = 2131034136;
+			// aapt resource value: 0x7f050019
+			public const int swtAttachLocation = 2131034137;
+			
+			// aapt resource value: 0x7f05001a
+			public const int swtBusy = 2131034138;
+			
+			// aapt resource value: 0x7f050016
+			public const int txtNotes = 2131034134;
 			
 			static Id()
 			{

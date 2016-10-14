@@ -215,6 +215,7 @@
     <AndroidResource Include="Resources\drawable\telstralogo.png" />
     <AndroidResource Include="Resources\drawable\splashscreen.png" />
     <AndroidResource Include="Resources\drawable\splashscreenglados.png" />
+    <AndroidResource Include="Resources\drawable\ContactListItem.xml" />
     <Content Include="ToDo-MvvmCross\_ Droid UI.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
