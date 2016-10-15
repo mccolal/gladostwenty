@@ -77,7 +77,6 @@ namespace gladostwenty.droid.Services {
                 
                 await Client.SyncContext.PushAsync();
                 await StatusTable.PullAsync("allStatuses", StatusTable.CreateQuery().Where(u => u.ToId == CurrentUser.id));
-                var a = StatusTable;
             } catch(Exception e) {
 
             }
