@@ -757,11 +757,17 @@ namespace gladostwenty.droid
 			// aapt resource value: 0x7f080000
 			public const int ApplicationTheme = 2131230720;
 			
-			// aapt resource value: 0x7f080001
-			public const int LoginViewTheme = 2131230721;
-			
 			// aapt resource value: 0x7f080002
-			public const int Theme_Splash = 2131230722;
+			public const int ApplicationTheme_ActionBar_TitleTextStyle = 2131230722;
+			
+			// aapt resource value: 0x7f080001
+			public const int ApplicationTheme_ActionBarStyle = 2131230721;
+			
+			// aapt resource value: 0x7f080003
+			public const int LoginViewTheme = 2131230723;
+			
+			// aapt resource value: 0x7f080004
+			public const int Theme_Splash = 2131230724;
 			
 			static Style()
 			{
