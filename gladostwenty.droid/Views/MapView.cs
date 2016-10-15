@@ -27,7 +27,7 @@ namespace gladostwenty.droid.Views
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.Map);
+            SetContentView(Resource.Layout.MapView);
             vm = ViewModel as MapViewModel;
             var mapFragment = FragmentManager.FindFragmentById(Resource.Id.map) as MapFragment;
             mapFragment.GetMapAsync(this);
