@@ -17,12 +17,11 @@
         android:id="@+id/fldFirstName"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/lblFirstName"
         android:textColor="#212121"
         android:layout_marginLeft="25dp"
         android:layout_marginTop="10dp"
         android:textSize="48px"
-        local:MvxBind="Text Contact.FirstName"/>
+        local:MvxBind="Text Contact.FirstName" />
     <TextView
         android:id="@+id/lblLastName"
         android:layout_width="wrap_content"
@@ -42,7 +41,10 @@
         android:layout_marginLeft="25dp"
         android:layout_marginTop="10dp"
         android:textSize="48px"
-        local:MvxBind="Text Contact.LastName"/>
+        local:MvxBind="Text Contact.LastName" />
+  
+  
+    <!-- Groups not implemented
     <TextView
         android:id="@+id/lblGroup"
         android:layout_width="wrap_content"
@@ -63,12 +65,12 @@
         android:layout_marginRight="25dp"
         android:layout_marginTop="10dp"
         android:textSize="48px"
-        android:text="group"/>
+        android:text="group" /> 
+    -->
     <TextView
         android:id="@+id/lblEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/fldGroup"
         android:layout_marginTop="25dp"
         android:layout_marginLeft="25dp"
         android:textSize="38px"
@@ -103,7 +105,7 @@
         android:layout_marginLeft="25dp"
         android:layout_marginTop="10dp"
         android:textSize="48px"
-        android:text="0412345678" />
+        local:MvxBind="Text Contact.Phone" />
     <RelativeLayout
         android:orientation="horizontal"
         android:layout_width="fill_parent"
@@ -114,6 +116,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
+            local:MvxBind="Click SendRequestCommand"
             android:text="Send Request" />
         <Button
             android:id="@+id/btnDone"
