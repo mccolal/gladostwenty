@@ -95,12 +95,15 @@ namespace gladostwenty.droid.Services {
             return await UserTable.LookupAsync(id);
         }
 
-        public async void SendStatusRequest(string to, string from, string msg) {
+
+
+        public async void SendStatus(string to, string from, string msg, bool request) {
             Dictionary<string, string> param = new Dictionary<string, string>();
 
             param.Add("to", to);
             param.Add("from", from);
             param.Add("msg", msg);
+            param.Add("req", request ? "r" : "s");
 
             CancellationTokenSource cts = new CancellationTokenSource();
            
