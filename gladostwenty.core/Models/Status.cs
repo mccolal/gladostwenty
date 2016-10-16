@@ -17,6 +17,10 @@ namespace gladostwenty.core.Models {
 
         public bool Seen { get; set; }
 
+        public string Lat { get; set; }
+
+        public string Long { get; set; }
+
         public bool Request { get; set; }
     }
 }

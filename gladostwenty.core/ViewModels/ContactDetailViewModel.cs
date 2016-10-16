@@ -39,14 +39,37 @@ namespace gladostwenty.core.ViewModels {
 
         public ICommand SendRequestCommand { get; set; }
 
+        private Status status { get; set; }
+
+        public Status Status { get {
+                return status;
+            }
+            set {
+                status = value;
+                RaisePropertyChanged(() => Status);
+            }
+        }
+
         public void Init(NavParameters contact) {
             Contact = contact;
+            LoadLatestStatus();
         }
 
         public ContactDetailViewModel() {
             SendRequestCommand = new MvxCommand(() => {
                 Mvx.Resolve<IAzureDataService>().SendStatus(Contact.Id, CurrentUser.id, "Test", true);
             });
+            
+        }
+
+        private async void LoadLatestStatus() {
+            Status status = await Mvx.Resolve<IAzureDataService>().GetUserStatus(Contact.Id);
+
+            if(status == null) {
+                Status = new Status { FromId = Contact.Id, ToId = CurrentUser.id, Message = "No current status" };
+            } else {
+                Status = status;
+            }
         }
     }
 }

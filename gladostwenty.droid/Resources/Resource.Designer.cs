@@ -441,14 +441,11 @@ namespace gladostwenty.droid
 			// aapt resource value: 0x7f07000c
 			public const int auto = 2131165196;
 			
-			// aapt resource value: 0x7f070018
-			public const int btnDone = 2131165208;
-			
 			// aapt resource value: 0x7f070017
 			public const int btnRequest = 2131165207;
 			
-			// aapt resource value: 0x7f070026
-			public const int btnSend = 2131165222;
+			// aapt resource value: 0x7f070025
+			public const int btnSend = 2131165221;
 			
 			// aapt resource value: 0x7f07000d
 			public const int dark = 2131165197;
@@ -471,26 +468,26 @@ namespace gladostwenty.droid
 			// aapt resource value: 0x7f070009
 			public const int icon_only = 2131165193;
 			
+			// aapt resource value: 0x7f07001a
+			public const int imageView1 = 2131165210;
+			
 			// aapt resource value: 0x7f07001b
-			public const int imageView1 = 2131165211;
+			public const int label = 2131165211;
 			
 			// aapt resource value: 0x7f07001c
-			public const int label = 2131165212;
+			public const int label2 = 2131165212;
 			
-			// aapt resource value: 0x7f07001d
-			public const int label2 = 2131165213;
+			// aapt resource value: 0x7f070024
+			public const int lblAttachLocation = 2131165220;
 			
-			// aapt resource value: 0x7f070025
-			public const int lblAttachLocation = 2131165221;
+			// aapt resource value: 0x7f070020
+			public const int lblAvailableIn = 2131165216;
 			
 			// aapt resource value: 0x7f070021
-			public const int lblAvailableIn = 2131165217;
+			public const int lblAvailableInPicker = 2131165217;
 			
-			// aapt resource value: 0x7f070022
-			public const int lblAvailableInPicker = 2131165218;
-			
-			// aapt resource value: 0x7f07001e
-			public const int lblBusy = 2131165214;
+			// aapt resource value: 0x7f07001d
+			public const int lblBusy = 2131165213;
 			
 			// aapt resource value: 0x7f070015
 			public const int lblContactNumber = 2131165205;
@@ -504,20 +501,20 @@ namespace gladostwenty.droid
 			// aapt resource value: 0x7f070011
 			public const int lblLastName = 2131165201;
 			
-			// aapt resource value: 0x7f070023
-			public const int lblNote = 2131165219;
+			// aapt resource value: 0x7f070022
+			public const int lblNote = 2131165218;
+			
+			// aapt resource value: 0x7f07001e
+			public const int lblReason = 2131165214;
 			
 			// aapt resource value: 0x7f07001f
-			public const int lblReason = 2131165215;
-			
-			// aapt resource value: 0x7f070020
-			public const int lblReasonPicker = 2131165216;
+			public const int lblReasonPicker = 2131165215;
 			
 			// aapt resource value: 0x7f07000e
 			public const int light = 2131165198;
 			
-			// aapt resource value: 0x7f07001a
-			public const int map = 2131165210;
+			// aapt resource value: 0x7f070019
+			public const int map = 2131165209;
 			
 			// aapt resource value: 0x7f070003
 			public const int none = 2131165187;
@@ -525,32 +522,32 @@ namespace gladostwenty.droid
 			// aapt resource value: 0x7f070004
 			public const int normal = 2131165188;
 			
-			// aapt resource value: 0x7f070019
-			public const int progressBar1 = 2131165209;
+			// aapt resource value: 0x7f070018
+			public const int progressBar1 = 2131165208;
 			
 			// aapt resource value: 0x7f070005
 			public const int satellite = 2131165189;
 			
-			// aapt resource value: 0x7f070029
-			public const int snrBusy = 2131165225;
+			// aapt resource value: 0x7f070028
+			public const int snrBusy = 2131165224;
 			
-			// aapt resource value: 0x7f07002a
-			public const int snrNumberBusy = 2131165226;
+			// aapt resource value: 0x7f070029
+			public const int snrNumberBusy = 2131165225;
 			
 			// aapt resource value: 0x7f07000a
 			public const int standard = 2131165194;
 			
-			// aapt resource value: 0x7f070027
-			public const int swtAttachLocation = 2131165223;
+			// aapt resource value: 0x7f070026
+			public const int swtAttachLocation = 2131165222;
 			
-			// aapt resource value: 0x7f070028
-			public const int swtBusy = 2131165224;
+			// aapt resource value: 0x7f070027
+			public const int swtBusy = 2131165223;
 			
 			// aapt resource value: 0x7f070006
 			public const int terrain = 2131165190;
 			
-			// aapt resource value: 0x7f070024
-			public const int txtNotes = 2131165220;
+			// aapt resource value: 0x7f070023
+			public const int txtNotes = 2131165219;
 			
 			// aapt resource value: 0x7f07000b
 			public const int wide = 2131165195;

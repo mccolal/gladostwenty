@@ -35,6 +35,17 @@ namespace gladostwenty.core.ViewModels
             }
         }
 
+        private ObservableCollection<Status> statuses;
+
+        public ObservableCollection<Status> Statueses {
+            get {
+                return statuses;
+            }
+            set {
+                SetProperty(ref statuses, value);
+            }
+        }
+
         public ICommand ContactSelectCommand { get; private set; }
 
         public FirstViewModel() {
@@ -52,6 +63,7 @@ namespace gladostwenty.core.ViewModels
             var dataService = Mvx.Resolve<IAzureDataService>();
             await dataService.Initialize();
             Users = new ObservableCollection<User>(await dataService.GetUserTable());
+            Statueses = new ObservableCollection<Status>(await dataService.GetStatusTable());
             Loading = false;
         }
     }

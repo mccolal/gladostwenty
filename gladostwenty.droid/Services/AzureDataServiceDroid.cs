@@ -38,11 +38,11 @@ namespace gladostwenty.droid.Services {
             Client = new MobileServiceClient("http://hywglados.azurewebsites.net");
             CurrentPlatform.Init();
             
+            StatusTable = Client.GetSyncTable<Status>();
             UserTable = Client.GetSyncTable<User>();
-            //StatusTable = Client.GetSyncTable<Status>();
 
             await InitLocalStoreAsync();
-            //await SyncStatusAsync();
+            await SyncStatusAsync();
             await SyncUsersAsync();
 
             return Client;
@@ -57,7 +57,7 @@ namespace gladostwenty.droid.Services {
             }
 
             var store = new MobileServiceSQLiteStore(path);
-            //store.DefineTable<Status>();
+            store.DefineTable<Status>();
             store.DefineTable<User>();
 
             await Client.SyncContext.InitializeAsync(store);
@@ -75,19 +75,21 @@ namespace gladostwenty.droid.Services {
         public async Task SyncStatusAsync() {
             try {
                 
-                await Client.SyncContext.PushAsync();
-                await StatusTable.PullAsync("allStatuses", StatusTable.CreateQuery().Where(u => u.ToId == CurrentUser.id));
+                //await Client.SyncContext.PushAsync();
+                await StatusTable.PullAsync("allStatuses", StatusTable.CreateQuery());
             } catch(Exception e) {
-
+                Toast.MakeText(null, e.ToString(), ToastLength.Long).Show();
             }
         }
 
         public async Task<List<Status>> GetStatusTable() {
 
 
-            return await Client.GetTable<Status>().Where(u => u.ToId == CurrentUser.id).ToListAsync(); ;
-            
-            //return await StatusTable.ToListAsync();
+            //return await Client.GetTable<Status>().Where(u => u.ToId == CurrentUser.id).ToListAsync();
+
+            var a = await StatusTable.ToListAsync();
+
+            return a;
         }
 
         public async Task<User> GetUser(string id) {
@@ -107,6 +109,26 @@ namespace gladostwenty.droid.Services {
             CancellationTokenSource cts = new CancellationTokenSource();
            
             await Client.InvokeApiAsync("StatusAPI", HttpMethod.Post, param, cts.Token);
+        }
+
+        /// <summary>
+        /// 
+        /// Gets the latest status for a user using their id as the search parameter
+        /// 
+        /// </summary>
+        /// <param name="id">The Id of the user</param>
+        /// <returns>A status object representing the user's last status</returns>
+        public async Task<Status> GetUserStatus(string id) {
+
+            var query = StatusTable.CreateQuery().Where(u => u.FromId == id && u.Request == false);
+
+            var result = await StatusTable.ToListAsync();
+
+            if(result == null || result.Count <= 0) {
+                return null;
+            }else {
+                return result.First();
+            }
         }
     }
 }
