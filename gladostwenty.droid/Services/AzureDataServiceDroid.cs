@@ -76,7 +76,7 @@ namespace gladostwenty.droid.Services {
             try {
                 
                 //await Client.SyncContext.PushAsync();
-                await StatusTable.PullAsync("allStatuses", StatusTable.CreateQuery());
+                await StatusTable.PullAsync("mystats" , StatusTable.Where(u => u.ToId == CurrentUser.id));
             } catch(Exception e) {
                 Toast.MakeText(null, e.ToString(), ToastLength.Long).Show();
             }
@@ -87,7 +87,7 @@ namespace gladostwenty.droid.Services {
 
             //return await Client.GetTable<Status>().Where(u => u.ToId == CurrentUser.id).ToListAsync();
 
-            var a = await StatusTable.ToListAsync();
+            var a = await StatusTable.Where(u => u.ToId == CurrentUser.id).ToListAsync();
 
             return a;
         }
@@ -120,9 +120,9 @@ namespace gladostwenty.droid.Services {
         /// <returns>A status object representing the user's last status</returns>
         public async Task<Status> GetUserStatus(string id) {
 
-            var query = StatusTable.CreateQuery().Where(u => u.FromId == id && u.Request == false);
+            var query = StatusTable.Where(u => u.FromId == id && u.ToId == CurrentUser.id && u.Request == false);
 
-            var result = await StatusTable.ToListAsync();
+            var result = await query.ToListAsync();
 
             if(result == null || result.Count <= 0) {
                 return null;
