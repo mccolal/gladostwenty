@@ -37,7 +37,7 @@ namespace gladostwenty.core.ViewModels
 
         private ObservableCollection<Status> statuses;
 
-        public ObservableCollection<Status> Statueses {
+        public ObservableCollection<Status> Statuses {
             get {
                 return statuses;
             }
@@ -63,7 +63,7 @@ namespace gladostwenty.core.ViewModels
             var dataService = Mvx.Resolve<IAzureDataService>();
             await dataService.Initialize();
             Users = new ObservableCollection<User>(await dataService.GetUserTable());
-            Statueses = new ObservableCollection<Status>(await dataService.GetStatusTable());
+            Statuses = new ObservableCollection<Status>(await dataService.GetStatusTable());
             Loading = false;
         }
     }
