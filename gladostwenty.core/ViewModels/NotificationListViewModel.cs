@@ -42,7 +42,7 @@ namespace gladostwenty.core.ViewModels {
 
             SelectedNotificationCommand = new MvxCommand<StatusListItem>((s) => {
                 if (s.Status.Request) {
-                    // ShowViewModel<>();
+                    ShowViewModel<OnRequestViewModel>();
                 }else {
                     // ShowViewModel<>();
                 }

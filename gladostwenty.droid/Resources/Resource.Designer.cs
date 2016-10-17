@@ -606,7 +606,7 @@ namespace gladostwenty.droid
 			public const int NotificationListView = 2130903044;
 			
 			// aapt resource value: 0x7f030005
-			public const int OnRequest = 2130903045;
+			public const int OnRequestView = 2130903045;
 			
 			// aapt resource value: 0x7f030006
 			public const int RequestStatusView = 2130903046;

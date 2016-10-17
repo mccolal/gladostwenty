@@ -162,7 +162,7 @@
     <Compile Include="Views\FirstView.cs" />
     <Compile Include="Views\LoginView.cs" />
     <Compile Include="Views\MapView.cs" />
-    <Compile Include="Views\OnRequest.cs" />
+    <Compile Include="Views\OnRequestView.cs" />
     <Compile Include="Views\RequestStatusView.cs" />
     <Compile Include="Views\NotificationListView.cs" />
     <Compile Include="Views\TabView.cs" />
@@ -177,7 +177,7 @@
     <AndroidResource Include="Resources\layout\FirstView.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\OnRequest.axml">
+    <AndroidResource Include="Resources\layout\OnRequestView.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\UserItemLayout.axml">

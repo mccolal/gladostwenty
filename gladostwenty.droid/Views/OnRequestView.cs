@@ -13,12 +13,12 @@ using Android.Widget;
 namespace gladostwenty.Droid.Views
 {
     [Activity(Label = "OnRequest")]
-    public class OnRequest : MvxActivity
+    public class OnRequestView : MvxActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
             // Set our view from the "Main" layout resource
-            SetContentView(Resource.Layout.OnRequest);
+            SetContentView(Resource.Layout.OnRequestView);
             Spinner SpinNumBusy = FindViewById<Spinner>(Resource.Id.snrNumberBusy);
             Spinner SpinReason = FindViewById<Spinner>(Resource.Id.snrBusy);
 
