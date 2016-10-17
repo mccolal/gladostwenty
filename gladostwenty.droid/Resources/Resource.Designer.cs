@@ -393,25 +393,34 @@ namespace gladostwenty.droid
 			public const int common_plus_signin_btn_text_light_pressed = 2130837546;
 			
 			// aapt resource value: 0x7f02002b
-			public const int ic_launcher = 2130837547;
+			public const int ic_contacts = 2130837547;
 			
 			// aapt resource value: 0x7f02002c
-			public const int Icon = 2130837548;
+			public const int ic_launcher = 2130837548;
 			
 			// aapt resource value: 0x7f02002d
-			public const int RoundedTextBox = 2130837549;
+			public const int ic_person_pin = 2130837549;
 			
 			// aapt resource value: 0x7f02002e
-			public const int splash = 2130837550;
+			public const int ic_sms = 2130837550;
 			
 			// aapt resource value: 0x7f02002f
-			public const int splashscreen = 2130837551;
+			public const int Icon = 2130837551;
 			
 			// aapt resource value: 0x7f020030
-			public const int splashscreenglados = 2130837552;
+			public const int RoundedTextBox = 2130837552;
 			
 			// aapt resource value: 0x7f020031
-			public const int telstralogo = 2130837553;
+			public const int splash = 2130837553;
+			
+			// aapt resource value: 0x7f020032
+			public const int splashscreen = 2130837554;
+			
+			// aapt resource value: 0x7f020033
+			public const int splashscreenglados = 2130837555;
+			
+			// aapt resource value: 0x7f020034
+			public const int telstralogo = 2130837556;
 			
 			static Drawable()
 			{
