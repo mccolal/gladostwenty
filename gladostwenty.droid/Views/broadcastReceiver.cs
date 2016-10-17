@@ -64,7 +64,7 @@ namespace gladostwenty
             }
 
             //var tags = new List<string>() { "falcons" }; // create tags if you want
-            var tags = new List<string>() { };
+            var tags = new List<string>() { core.Models.CurrentUser.id};
 
             try
             {
