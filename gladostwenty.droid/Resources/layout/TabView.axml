@@ -12,7 +12,8 @@
             android:id="@android:id/tabs"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:background="@color/main_color_light"/>
+            android:background="@color/main_color_light"
+            android:padding="3dp"/>
         <FrameLayout
             android:id="@android:id/tabcontent"
             android:layout_width="fill_parent"

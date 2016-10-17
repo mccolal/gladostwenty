@@ -8,6 +8,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace gladostwenty.core.ViewModels {
     public class NotificationListViewModel : MvxViewModel{
@@ -34,9 +35,22 @@ namespace gladostwenty.core.ViewModels {
             }
         }
 
+        public ICommand SelectedNotificationCommand { get; set; }
+
 
         public NotificationListViewModel() {
+
+            SelectedNotificationCommand = new MvxCommand<StatusListItem>((s) => {
+                if (s.Status.Request) {
+                    // ShowViewModel<>();
+                }else {
+                    // ShowViewModel<>();
+                }
+            });
+
             Initialize();
+
+
         }
 
         private async void Initialize() {
