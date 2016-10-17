@@ -164,7 +164,7 @@
     <Compile Include="Views\MapView.cs" />
     <Compile Include="Views\OnRequest.cs" />
     <Compile Include="Views\RequestStatusView.cs" />
-    <Compile Include="Views\StatusListView.cs" />
+    <Compile Include="Views\NotificationListView.cs" />
     <Compile Include="Views\TabView.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -192,7 +192,7 @@
     <AndroidResource Include="Resources\layout\ContactDetailView.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\StatusListView.axml">
+    <AndroidResource Include="Resources\layout\NotificationListView.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\StatusItemLayout.axml">
@@ -235,7 +235,9 @@
     <AndroidResource Include="Resources\values\SplashStyle.xml" />
     <AndroidResource Include="Resources\drawable\splash.png" />
     <AndroidResource Include="Resources\values\LoginStyle.xml" />
-    <AndroidResource Include="Resources\values\AppTheme.xml" />
+    <AndroidResource Include="Resources\values\AppTheme.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
     <AndroidResource Include="Resources\values\colors.xml" />
     <AndroidResource Include="Resources\drawable\RoundedTextBox.xml" />
     <AndroidResource Include="Resources\drawable\Icon.png" />

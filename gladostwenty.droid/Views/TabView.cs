@@ -25,14 +25,19 @@ namespace gladostwenty.droid.Views {
             TabHost.TabSpec spec;
             Intent intent;
 
-            spec = TabHost.NewTabSpec("first");
+            spec = TabHost.NewTabSpec("contacts");
             spec.SetIndicator("Contacts");
-            spec.SetContent(this.CreateIntentFor(TabViewModel.First));
+            spec.SetContent(this.CreateIntentFor(TabViewModel.Contacts));
             TabHost.AddTab(spec);
 
             spec = TabHost.NewTabSpec("map");
             spec.SetIndicator("Map");
             spec.SetContent(this.CreateIntentFor(TabViewModel.Map));
+            TabHost.AddTab(spec);
+
+            spec = TabHost.NewTabSpec("notifications");
+            spec.SetIndicator("Notifications");
+            spec.SetContent(this.CreateIntentFor(TabViewModel.Notifications));
             TabHost.AddTab(spec);
         }
     }

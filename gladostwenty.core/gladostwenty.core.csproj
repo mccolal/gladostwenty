@@ -52,9 +52,9 @@
     <Compile Include="ViewModels\FirstViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\MapViewModel.cs" />
+    <Compile Include="ViewModels\NotificationListViewModel.cs" />
     <Compile Include="ViewModels\OnRequestViewModel.cs" />
     <Compile Include="ViewModels\RequestStatusViewModel.cs" />
-    <Compile Include="ViewModels\StatusListViewModel.cs" />
     <Compile Include="ViewModels\TabViewModel.cs" />
   </ItemGroup>
   <ItemGroup>

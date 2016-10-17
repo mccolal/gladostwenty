@@ -65,7 +65,7 @@ namespace gladostwenty.droid.Services {
 
         public async Task SyncUsersAsync() {
             try {
-                await Client.SyncContext.PushAsync();
+                //await Client.SyncContext.PushAsync();
                 await UserTable.PullAsync("AllUsers", UserTable.CreateQuery()) ;
             }catch(Exception e) {
                 Console.WriteLine(e.ToString());
@@ -75,7 +75,7 @@ namespace gladostwenty.droid.Services {
         public async Task SyncStatusAsync() {
             try {
                 
-                await Client.SyncContext.PushAsync();
+                //await Client.SyncContext.PushAsync();
                 await StatusTable.PullAsync("mystats" , StatusTable.Where(u => u.ToId == CurrentUser.id));
             } catch(Exception e) {
                 Console.WriteLine(e.ToString());

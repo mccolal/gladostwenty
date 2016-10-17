@@ -12,20 +12,26 @@ namespace gladostwenty.core.ViewModels {
 
         private IGeoCoder geocoder;
         public TabViewModel() {
-            First = new FirstViewModel();
+            Contacts = new FirstViewModel();
             Map = new MapViewModel(geocoder);
+            Notifications = new NotificationListViewModel();
         }
-        private FirstViewModel _first;
-        public FirstViewModel First {
-            get { return _first; }
-            set { _first = value; RaisePropertyChanged(() => First); }
+        private FirstViewModel contacts;
+        public FirstViewModel Contacts {
+            get { return contacts; }
+            set { contacts = value; RaisePropertyChanged(() => Contacts); }
         }
 
-        private MapViewModel _map;
+        private MapViewModel map;
         public MapViewModel Map {
-            get { return _map; }
-            set { _map = value; RaisePropertyChanged(() => Map); }
+            get { return map; }
+            set { map = value; RaisePropertyChanged(() => Map); }
         }
 
+        private NotificationListViewModel notifications;
+        public NotificationListViewModel Notifications {
+            get { return notifications; }
+            set { notifications = value; RaisePropertyChanged(() => Notifications); }
+        }
     }
 }
