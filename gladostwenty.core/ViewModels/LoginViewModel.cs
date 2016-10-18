@@ -42,6 +42,8 @@ namespace gladostwenty.core.ViewModels {
                         if (Username != string.Empty && Username.ToLower().Equals("alex")) {
                             CurrentUser.id = "bdd58606-09d3-4aea-b9da-e957e2b24c0d";
                         }
+                    }else {
+                        CurrentUser.id = "107e1121-2bdc-47b5-9acc-df72ea6b5a20";
                     }
 
                     CurrentUser.Authenticated = true;

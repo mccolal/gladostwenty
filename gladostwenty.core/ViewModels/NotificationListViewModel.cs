@@ -62,10 +62,12 @@ namespace gladostwenty.core.ViewModels {
 
         private async void UpdateStatusList() {
             StatusList = new ObservableCollection<StatusListItem>();
+            var stats = new List<StatusListItem>();
             
             foreach (Status status in Statuses) {
-                StatusList.Add(new StatusListItem { Status = status, Contact = await Mvx.Resolve<IAzureDataService>().GetUser(status.FromId) });
+                stats.Add(new StatusListItem { Status = status, Contact = await Mvx.Resolve<IAzureDataService>().GetUser(status.FromId) });
             }
+            StatusList = new ObservableCollection<StatusListItem>(stats);
         }
 
         public class StatusListItem{
