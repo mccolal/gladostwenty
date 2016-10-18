@@ -19,7 +19,9 @@ namespace gladostwenty.droid.Views {
 
         protected override void OnCreate(Bundle bundle) {
             base.OnCreate(bundle);
-
+            var contactsAdapter = new ContactsAdapter(this);
+            var contactsListView = FindViewById<ListView>(Resource.Id.ContactsListView);
+            contactsListView.Adapter = contactsAdapter;
             SetContentView(Resource.Layout.NotificationListView);
         }
     }

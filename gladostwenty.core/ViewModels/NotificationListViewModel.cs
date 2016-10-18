@@ -56,7 +56,18 @@ namespace gladostwenty.core.ViewModels {
                         Name = s.Contact.FullName
                     }); 
                 }else {
-                    // ShowViewModel<>();
+                    ShowViewModel<RequestStatusViewModel>(new RequestStatusViewModel.StatusInfo
+                    {
+                        id = s.Status.id,
+                        ToId = s.Status.ToId,
+                        FromId = s.Status.FromId,
+                        Message = s.Status.Message,
+                        Seen = s.Status.Seen,
+                        Lat = s.Status.Lat,
+                        Long = s.Status.Long,
+                        Request = s.Status.Request,
+                        Name = s.Contact.FullName
+                    });
                 }
             });
 
@@ -70,6 +81,7 @@ namespace gladostwenty.core.ViewModels {
             var dataService = Mvx.Resolve<IAzureDataService>();
 
             Statuses = new ObservableCollection<Status>(await dataService.GetStatusTable());
+
         }
 
         private async void UpdateStatusList() {
