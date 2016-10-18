@@ -8,15 +8,16 @@ using Android.App;
 using Android.OS;
 using MvvmCross.Droid.Views;
 using Android.Widget;
-
+using gladostwenty.droid.Views;
 
 namespace gladostwenty.Droid.Views
 {
-    [Activity(Label = "OnRequest")]
+    [Activity(Label = "OnRequest", ParentActivity = typeof(NotificationListView))]
     public class OnRequestView : MvxActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
+            base.OnCreate(savedInstanceState);
             // Set our view from the "Main" layout resource
             SetContentView(Resource.Layout.OnRequestView);
             Spinner SpinNumBusy = FindViewById<Spinner>(Resource.Id.snrNumberBusy);
@@ -33,7 +34,7 @@ namespace gladostwenty.Droid.Views
             SpinNumBusy.Adapter = adapterNumBusy;
             adapterReason.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
             SpinReason.Adapter = adapterReason;
-            base.OnCreate(savedInstanceState);
+            
 
             // Create your application here
         }

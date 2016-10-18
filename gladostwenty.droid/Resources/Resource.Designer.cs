@@ -453,8 +453,8 @@ namespace gladostwenty.droid
 			// aapt resource value: 0x7f070017
 			public const int btnRequest = 2131165207;
 			
-			// aapt resource value: 0x7f070025
-			public const int btnSend = 2131165221;
+			// aapt resource value: 0x7f070029
+			public const int btnreply = 2131165225;
 			
 			// aapt resource value: 0x7f07000d
 			public const int dark = 2131165197;
@@ -537,20 +537,20 @@ namespace gladostwenty.droid
 			// aapt resource value: 0x7f070005
 			public const int satellite = 2131165189;
 			
-			// aapt resource value: 0x7f070028
-			public const int snrBusy = 2131165224;
+			// aapt resource value: 0x7f070027
+			public const int snrBusy = 2131165223;
 			
-			// aapt resource value: 0x7f070029
-			public const int snrNumberBusy = 2131165225;
+			// aapt resource value: 0x7f070028
+			public const int snrNumberBusy = 2131165224;
 			
 			// aapt resource value: 0x7f07000a
 			public const int standard = 2131165194;
 			
-			// aapt resource value: 0x7f070026
-			public const int swtAttachLocation = 2131165222;
+			// aapt resource value: 0x7f070025
+			public const int swtAttachLocation = 2131165221;
 			
-			// aapt resource value: 0x7f070027
-			public const int swtBusy = 2131165223;
+			// aapt resource value: 0x7f070026
+			public const int swtBusy = 2131165222;
 			
 			// aapt resource value: 0x7f070006
 			public const int terrain = 2131165190;

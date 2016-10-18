@@ -16,7 +16,8 @@
         android:layout_toRightOf="@id/imageView1"
         android:textSize="48px"
         android:textColor="#212121"
-        android:text="Contact 1" />
+        android:text="Contact 1"
+        local:MvxBind="Text Info.Name" />
     <TextView
         android:id="@+id/label2"
         android:layout_width="fill_parent"
@@ -97,8 +98,8 @@
         android:layout_marginTop="3dp"
         android:textSize="48px"
         android:id="@+id/txtNotes"
-        android:hint="Anything extra to say?"
-        local:MvxBind="Text Message, Mode=OneWayToSource" />
+        android:hint=""
+        local:MvxBind="Text Message" />
     <TextView
         android:id="@+id/lblAttachLocation"
         android:layout_width="wrap_content"
@@ -109,15 +110,6 @@
         android:layout_marginTop="65dp"
         android:textSize="38px"
         android:text="Attach Location?" />
-    <Button
-        android:id="@+id/btnSend"
-        android:text="Send"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="250dp"
-        android:layout_marginTop="40dp"
-        android:layout_below="@id/lblAttachLocation"
-        local:MvxBind="Click ButtonCommand" />
     <Switch
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -152,4 +144,14 @@
         android:id="@+id/snrNumberBusy"
         android:text="@string/number_default"
         android:spinnerMode="dialog" />
+    <Button
+        android:id="@+id/btnreply"
+        android:text="reply"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="250dp"
+        android:layout_marginTop="40dp"
+        android:layout_below="@id/lblAttachLocation"
+        android:enabled="true"
+        local:MvxBind="Click SendReply"/>
 </RelativeLayout>

@@ -42,7 +42,19 @@ namespace gladostwenty.core.ViewModels {
 
             SelectedNotificationCommand = new MvxCommand<StatusListItem>((s) => {
                 if (s.Status.Request) {
-                    ShowViewModel<OnRequestViewModel>();
+                    ShowViewModel<OnRequestViewModel>(
+                    new OnRequestViewModel.StatusInfo
+                    {
+                        id = s.Status.id,
+                        ToId = s.Status.ToId,
+                        FromId = s.Status.FromId,
+                        Message = s.Status.Message,
+                        Seen = s.Status.Seen,
+                        Lat = s.Status.Lat,
+                        Long = s.Status.Long,
+                        Request = s.Status.Request,
+                        Name = s.Contact.FullName
+                    }); 
                 }else {
                     // ShowViewModel<>();
                 }
