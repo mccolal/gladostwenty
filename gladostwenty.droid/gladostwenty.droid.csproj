@@ -252,6 +252,9 @@
     <AndroidResource Include="Resources\drawable\ic_person_pin.png" />
     <AndroidResource Include="Resources\drawable\ic_sms.png" />
     <AndroidResource Include="Resources\drawable\ic_contacts.png" />
+    <AndroidResource Include="Resources\drawable\ic_cloud_upload.png" />
+    <AndroidResource Include="Resources\drawable\ic_cloud_download.png" />
+    <AndroidResource Include="Resources\drawable\ic_pin_drop_black.png" />
     <Content Include="ToDo-MvvmCross\_ Droid UI.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

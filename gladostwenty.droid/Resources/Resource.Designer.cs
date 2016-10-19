@@ -393,34 +393,43 @@ namespace gladostwenty.droid
 			public const int common_plus_signin_btn_text_light_pressed = 2130837546;
 			
 			// aapt resource value: 0x7f02002b
-			public const int ic_contacts = 2130837547;
+			public const int ic_cloud_download = 2130837547;
 			
 			// aapt resource value: 0x7f02002c
-			public const int ic_launcher = 2130837548;
+			public const int ic_cloud_upload = 2130837548;
 			
 			// aapt resource value: 0x7f02002d
-			public const int ic_person_pin = 2130837549;
+			public const int ic_contacts = 2130837549;
 			
 			// aapt resource value: 0x7f02002e
-			public const int ic_sms = 2130837550;
+			public const int ic_launcher = 2130837550;
 			
 			// aapt resource value: 0x7f02002f
-			public const int Icon = 2130837551;
+			public const int ic_person_pin = 2130837551;
 			
 			// aapt resource value: 0x7f020030
-			public const int RoundedTextBox = 2130837552;
+			public const int ic_pin_drop_black = 2130837552;
 			
 			// aapt resource value: 0x7f020031
-			public const int splash = 2130837553;
+			public const int ic_sms = 2130837553;
 			
 			// aapt resource value: 0x7f020032
-			public const int splashscreen = 2130837554;
+			public const int Icon = 2130837554;
 			
 			// aapt resource value: 0x7f020033
-			public const int splashscreenglados = 2130837555;
+			public const int RoundedTextBox = 2130837555;
 			
 			// aapt resource value: 0x7f020034
-			public const int telstralogo = 2130837556;
+			public const int splash = 2130837556;
+			
+			// aapt resource value: 0x7f020035
+			public const int splashscreen = 2130837557;
+			
+			// aapt resource value: 0x7f020036
+			public const int splashscreenglados = 2130837558;
+			
+			// aapt resource value: 0x7f020037
+			public const int telstralogo = 2130837559;
 			
 			static Drawable()
 			{
@@ -480,6 +489,9 @@ namespace gladostwenty.droid
 			// aapt resource value: 0x7f07001b
 			public const int imageView1 = 2131165211;
 			
+			// aapt resource value: 0x7f070031
+			public const int imageView2 = 2131165233;
+			
 			// aapt resource value: 0x7f07001c
 			public const int label = 2131165212;
 			
@@ -510,6 +522,9 @@ namespace gladostwenty.droid
 			// aapt resource value: 0x7f070011
 			public const int lblLastName = 2131165201;
 			
+			// aapt resource value: 0x7f07002e
+			public const int lblMessage = 2131165230;
+			
 			// aapt resource value: 0x7f070023
 			public const int lblNote = 2131165219;
 			
@@ -519,14 +534,11 @@ namespace gladostwenty.droid
 			// aapt resource value: 0x7f070020
 			public const int lblReasonPicker = 2131165216;
 			
-			// aapt resource value: 0x7f07002d
-			public const int lblSeen = 2131165229;
-			
-			// aapt resource value: 0x7f07002c
-			public const int lblSenderMessage = 2131165228;
-			
 			// aapt resource value: 0x7f07002b
 			public const int lblSenderName = 2131165227;
+			
+			// aapt resource value: 0x7f07002c
+			public const int lblhasReplied = 2131165228;
 			
 			// aapt resource value: 0x7f07000e
 			public const int light = 2131165198;
@@ -555,6 +567,12 @@ namespace gladostwenty.droid
 			// aapt resource value: 0x7f070029
 			public const int snrNumberBusy = 2131165225;
 			
+			// aapt resource value: 0x7f07002d
+			public const int space1 = 2131165229;
+			
+			// aapt resource value: 0x7f07002f
+			public const int space2 = 2131165231;
+			
 			// aapt resource value: 0x7f07000a
 			public const int standard = 2131165194;
 			
@@ -567,8 +585,8 @@ namespace gladostwenty.droid
 			// aapt resource value: 0x7f070006
 			public const int terrain = 2131165190;
 			
-			// aapt resource value: 0x7f07002e
-			public const int textView4 = 2131165230;
+			// aapt resource value: 0x7f070030
+			public const int textView4 = 2131165232;
 			
 			// aapt resource value: 0x7f070024
 			public const int txtNotes = 2131165220;

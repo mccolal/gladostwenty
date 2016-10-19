@@ -13,7 +13,7 @@ using Android.Widget;
 using MvvmCross.Droid.Views;
 
 namespace gladostwenty.droid.Views {
-    [Activity(Label = "View for RequestStatusViewModel")]
+    [Activity(Label = "GladowTwenty", ParentActivity = typeof(OutBoundReplyView))]
     public class RequestStatusView : MvxActivity{
 
         protected override void OnCreate(Bundle bundle) {

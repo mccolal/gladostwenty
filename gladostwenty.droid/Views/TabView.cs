@@ -36,12 +36,12 @@ namespace gladostwenty.droid.Views {
             TabHost.AddTab(spec);
 
             spec = TabHost.NewTabSpec("outboundReply");
-            spec.SetIndicator("", GetDrawable(Resource.Drawable.ic_sms));
+            spec.SetIndicator("", GetDrawable(Resource.Drawable.ic_cloud_upload));
             spec.SetContent(this.CreateIntentFor(TabViewModel.OutboundReply));
             TabHost.AddTab(spec);
 
             spec = TabHost.NewTabSpec("notifications");
-            spec.SetIndicator("", GetDrawable(Resource.Drawable.ic_sms));
+            spec.SetIndicator("", GetDrawable(Resource.Drawable.ic_cloud_download));
             spec.SetContent(this.CreateIntentFor(TabViewModel.Notifications));
             TabHost.AddTab(spec);
 
