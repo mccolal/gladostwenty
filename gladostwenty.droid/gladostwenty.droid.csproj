@@ -126,8 +126,24 @@
     </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Xml" />
+    <Reference Include="Xamarin.Android.Support.v4, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xamarin.Android.Support.v4.23.4.0.1\lib\MonoAndroid403\Xamarin.Android.Support.v4.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Xamarin.Azure.NotificationHubs.Android, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Xamarin.Azure.NotificationHubs.Android.0.4.0\lib\MonoAndroid403\Xamarin.Azure.NotificationHubs.Android.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xamarin.GooglePlayServices.Base, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xamarin.GooglePlayServices.Base.29.0.0.1\lib\MonoAndroid41\Xamarin.GooglePlayServices.Base.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xamarin.GooglePlayServices.Basement, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xamarin.GooglePlayServices.Basement.29.0.0.1\lib\MonoAndroid41\Xamarin.GooglePlayServices.Basement.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xamarin.GooglePlayServices.Maps, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xamarin.GooglePlayServices.Maps.29.0.0.1\lib\MonoAndroid41\Xamarin.GooglePlayServices.Maps.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
@@ -145,9 +161,12 @@
     <Compile Include="Views\ContactDetailView.cs" />
     <Compile Include="Views\FirstView.cs" />
     <Compile Include="Views\LoginView.cs" />
-    <Compile Include="Views\OnRequest.cs" />
+    <Compile Include="Views\MapView.cs" />
+    <Compile Include="Views\OnRequestView.cs" />
+    <Compile Include="Views\OutBoundReplyView.cs" />
     <Compile Include="Views\RequestStatusView.cs" />
-    <Compile Include="Views\StatusListView.cs" />
+    <Compile Include="Views\NotificationListView.cs" />
+    <Compile Include="Views\TabView.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -159,7 +178,7 @@
     <AndroidResource Include="Resources\layout\FirstView.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\OnRequest.axml">
+    <AndroidResource Include="Resources\layout\OnRequestView.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\UserItemLayout.axml">
@@ -174,10 +193,19 @@
     <AndroidResource Include="Resources\layout\ContactDetailView.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\StatusListView.axml">
+    <AndroidResource Include="Resources\layout\NotificationListView.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\StatusItemLayout.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\TabView.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\MapView.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\OutBoundReply.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
@@ -202,12 +230,18 @@
       <Visible>False</Visible>
       <Version>1.0</Version>
     </XamarinComponentReference>
+    <XamarinComponentReference Include="googleplayservices-maps">
+      <Visible>False</Visible>
+      <Version>29.0.0.2</Version>
+    </XamarinComponentReference>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\SplashStyle.xml" />
     <AndroidResource Include="Resources\drawable\splash.png" />
     <AndroidResource Include="Resources\values\LoginStyle.xml" />
-    <AndroidResource Include="Resources\values\AppTheme.xml" />
+    <AndroidResource Include="Resources\values\AppTheme.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
     <AndroidResource Include="Resources\values\colors.xml" />
     <AndroidResource Include="Resources\drawable\RoundedTextBox.xml" />
     <AndroidResource Include="Resources\drawable\Icon.png" />
@@ -215,7 +249,12 @@
     <AndroidResource Include="Resources\drawable\telstralogo.png" />
     <AndroidResource Include="Resources\drawable\splashscreen.png" />
     <AndroidResource Include="Resources\drawable\splashscreenglados.png" />
-    <AndroidResource Include="Resources\drawable\ContactListItem.xml" />
+    <AndroidResource Include="Resources\drawable\ic_person_pin.png" />
+    <AndroidResource Include="Resources\drawable\ic_sms.png" />
+    <AndroidResource Include="Resources\drawable\ic_contacts.png" />
+    <AndroidResource Include="Resources\drawable\ic_cloud_upload.png" />
+    <AndroidResource Include="Resources\drawable\ic_cloud_download.png" />
+    <AndroidResource Include="Resources\drawable\ic_pin_drop_black.png" />
     <Content Include="ToDo-MvvmCross\_ Droid UI.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

@@ -38,11 +38,19 @@ namespace gladostwenty.core.ViewModels {
         public LoginViewModel() {
             LoginCommand = new MvxCommand(() => {
                 if (Login()) {
+                    if (null != Username) {
+                        if (Username != string.Empty && Username.ToLower().Equals("alex")) {
+                            CurrentUser.id = "bdd58606-09d3-4aea-b9da-e957e2b24c0d";
+                        }
+                    }else {
+                        CurrentUser.id = "107e1121-2bdc-47b5-9acc-df72ea6b5a20";
+                    }
+
                     CurrentUser.Authenticated = true;
 
                     //Mvx.Resolve<IAzureAuthenticationService>().Authenticate();
 
-                    ShowViewModel<FirstViewModel>();
+                    ShowViewModel<TabViewModel>();
                 } else {
                     Reset();
                 }

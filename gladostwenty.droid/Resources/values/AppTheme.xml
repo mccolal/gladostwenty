@@ -2,5 +2,21 @@
 
 <resources>
   <style name="ApplicationTheme" parent="@android:style/Theme.Material.Light">
+
+    <item name="android:actionBarStyle">@style/ApplicationTheme.ActionBarStyle</item>
+    <item name="android:colorPrimary">@color/main_color</item>
+    <item name="android:colorPrimaryDark">@color/main_color_dark</item>
+    <item name="android:colorAccent">@color/accent</item>
+  </style>
+
+  <style name="ApplicationTheme.ActionBarStyle" parent="@android:style/Widget.Material.Light.ActionBar">
+    <item name="android:titleTextStyle">@style/ApplicationTheme.ActionBar.TitleTextStyle</item>
+    <item name="android:background">@color/main_color</item>
+  </style>
+
+  <style name="ApplicationTheme.ActionBar.TitleTextStyle" parent="@android:style/TextAppearance.Material.Widget.ActionBar.Title">
+
+    
+    <item name="android:textColor">#fff</item>
   </style>
 </resources>

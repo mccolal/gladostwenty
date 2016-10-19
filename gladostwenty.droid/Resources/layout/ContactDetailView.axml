@@ -106,23 +106,38 @@
         android:layout_marginTop="10dp"
         android:textSize="48px"
         local:MvxBind="Text Contact.Phone" />
-    <RelativeLayout
-        android:orientation="horizontal"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:gravity="bottom">
-        <Button
-            android:id="@+id/btnRequest"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            local:MvxBind="Click SendRequestCommand"
-            android:text="Send Request" />
-        <Button
-            android:id="@+id/btnDone"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:text="Done" />
-    </RelativeLayout>
+
+      <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="2"
+        android:rowCount="2">
+        
+        <TextView
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:text="Last Status"
+        />
+
+        <TextView
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:text="16/10/2016"
+        />
+
+        <TextView
+          android:layout_height="wrap_content"
+          android:layout_weight="2"
+          local:MvxBind="Text Status.Message"/>
+        
+      </GridLayout>
+      
+      
+      <Button
+        android:id="@+id/btnRequest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        local:MvxBind="Click SendRequestCommand"
+        android:text="Send Request" />
 </LinearLayout>
