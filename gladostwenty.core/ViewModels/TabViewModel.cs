@@ -14,6 +14,8 @@ namespace gladostwenty.core.ViewModels {
         public TabViewModel() {
             Contacts = new FirstViewModel();
             Map = new MapViewModel(geocoder);
+
+            OutboundReply = new OutBoundReplyViewModel();
             Notifications = new NotificationListViewModel();
         }
         private FirstViewModel contacts;
@@ -28,10 +30,19 @@ namespace gladostwenty.core.ViewModels {
             set { map = value; RaisePropertyChanged(() => Map); }
         }
 
+        private OutBoundReplyViewModel outboundReply;
+        public OutBoundReplyViewModel OutboundReply
+        {
+            get { return outboundReply; }
+            set { outboundReply = value; RaisePropertyChanged(() => OutboundReply); }
+        }
+
         private NotificationListViewModel notifications;
         public NotificationListViewModel Notifications {
             get { return notifications; }
             set { notifications = value; RaisePropertyChanged(() => Notifications); }
         }
+
+
     }
 }

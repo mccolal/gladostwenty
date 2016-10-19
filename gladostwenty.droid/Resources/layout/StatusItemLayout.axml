@@ -9,18 +9,6 @@
         android:layout_height="wrap_content"
         android:textSize="30dp"
         local:MvxBind="Text Contact.FullName" />
-    <Button
-      android:text="In"
-      android:layout_width="50dp"
-      android:layout_height="50dp"
-      android:layout_margin="5dp"
-      local:MvxBind="Click tester"
-            />
-    <Button
-      android:id="@+id/btnStatusOut"
-      android:text="Reply"
-      android:layout_width="50dp"
-      android:layout_height="50dp"
-      local:MvxBind="Click tester"
+
             />
 </LinearLayout>

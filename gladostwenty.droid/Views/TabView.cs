@@ -35,10 +35,17 @@ namespace gladostwenty.droid.Views {
             spec.SetContent(this.CreateIntentFor(TabViewModel.Map));
             TabHost.AddTab(spec);
 
+            spec = TabHost.NewTabSpec("outboundReply");
+            spec.SetIndicator("", GetDrawable(Resource.Drawable.ic_sms));
+            spec.SetContent(this.CreateIntentFor(TabViewModel.OutboundReply));
+            TabHost.AddTab(spec);
+
             spec = TabHost.NewTabSpec("notifications");
             spec.SetIndicator("", GetDrawable(Resource.Drawable.ic_sms));
             spec.SetContent(this.CreateIntentFor(TabViewModel.Notifications));
             TabHost.AddTab(spec);
+
+
         }
     }
 }

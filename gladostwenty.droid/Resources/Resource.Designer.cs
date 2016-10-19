@@ -453,9 +453,6 @@ namespace gladostwenty.droid
 			// aapt resource value: 0x7f070017
 			public const int btnRequest = 2131165207;
 			
-			// aapt resource value: 0x7f07002f
-			public const int btnStatusOut = 2131165231;
-			
 			// aapt resource value: 0x7f07002a
 			public const int btnreply = 2131165226;
 			
@@ -627,19 +624,22 @@ namespace gladostwenty.droid
 			public const int OnRequestView = 2130903045;
 			
 			// aapt resource value: 0x7f030006
-			public const int RequestStatusView = 2130903046;
+			public const int OutBoundReply = 2130903046;
 			
 			// aapt resource value: 0x7f030007
-			public const int SplashScreen = 2130903047;
+			public const int RequestStatusView = 2130903047;
 			
 			// aapt resource value: 0x7f030008
-			public const int StatusItemLayout = 2130903048;
+			public const int SplashScreen = 2130903048;
 			
 			// aapt resource value: 0x7f030009
-			public const int TabView = 2130903049;
+			public const int StatusItemLayout = 2130903049;
 			
 			// aapt resource value: 0x7f03000a
-			public const int UserItemLayout = 2130903050;
+			public const int TabView = 2130903050;
+			
+			// aapt resource value: 0x7f03000b
+			public const int UserItemLayout = 2130903051;
 			
 			static Layout()
 			{

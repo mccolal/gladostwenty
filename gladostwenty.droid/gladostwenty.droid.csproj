@@ -163,6 +163,7 @@
     <Compile Include="Views\LoginView.cs" />
     <Compile Include="Views\MapView.cs" />
     <Compile Include="Views\OnRequestView.cs" />
+    <Compile Include="Views\OutBoundReplyView.cs" />
     <Compile Include="Views\RequestStatusView.cs" />
     <Compile Include="Views\NotificationListView.cs" />
     <Compile Include="Views\TabView.cs" />
@@ -202,6 +203,9 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\MapView.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\OutBoundReply.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
