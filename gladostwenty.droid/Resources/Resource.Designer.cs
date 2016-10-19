@@ -435,9 +435,6 @@ namespace gladostwenty.droid
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f07001a
-			public const int ContactName = 2131165210;
-			
 			// aapt resource value: 0x7f070000
 			public const int MvvmCrossTagId = 2131165184;
 			
@@ -456,11 +453,11 @@ namespace gladostwenty.droid
 			// aapt resource value: 0x7f070017
 			public const int btnRequest = 2131165207;
 			
-			// aapt resource value: 0x7f07001b
-			public const int btnStatus = 2131165211;
+			// aapt resource value: 0x7f07002f
+			public const int btnStatusOut = 2131165231;
 			
-			// aapt resource value: 0x7f07002b
-			public const int btnreply = 2131165227;
+			// aapt resource value: 0x7f07002a
+			public const int btnreply = 2131165226;
 			
 			// aapt resource value: 0x7f07000d
 			public const int dark = 2131165197;
@@ -483,26 +480,26 @@ namespace gladostwenty.droid
 			// aapt resource value: 0x7f070009
 			public const int icon_only = 2131165193;
 			
+			// aapt resource value: 0x7f07001b
+			public const int imageView1 = 2131165211;
+			
 			// aapt resource value: 0x7f07001c
-			public const int imageView1 = 2131165212;
+			public const int label = 2131165212;
 			
 			// aapt resource value: 0x7f07001d
-			public const int label = 2131165213;
+			public const int label2 = 2131165213;
 			
-			// aapt resource value: 0x7f07001e
-			public const int label2 = 2131165214;
+			// aapt resource value: 0x7f070025
+			public const int lblAttachLocation = 2131165221;
 			
-			// aapt resource value: 0x7f070026
-			public const int lblAttachLocation = 2131165222;
+			// aapt resource value: 0x7f070021
+			public const int lblAvailableIn = 2131165217;
 			
 			// aapt resource value: 0x7f070022
-			public const int lblAvailableIn = 2131165218;
+			public const int lblAvailableInPicker = 2131165218;
 			
-			// aapt resource value: 0x7f070023
-			public const int lblAvailableInPicker = 2131165219;
-			
-			// aapt resource value: 0x7f07001f
-			public const int lblBusy = 2131165215;
+			// aapt resource value: 0x7f07001e
+			public const int lblBusy = 2131165214;
 			
 			// aapt resource value: 0x7f070015
 			public const int lblContactNumber = 2131165205;
@@ -516,26 +513,29 @@ namespace gladostwenty.droid
 			// aapt resource value: 0x7f070011
 			public const int lblLastName = 2131165201;
 			
-			// aapt resource value: 0x7f070024
-			public const int lblNote = 2131165220;
+			// aapt resource value: 0x7f070023
+			public const int lblNote = 2131165219;
+			
+			// aapt resource value: 0x7f07001f
+			public const int lblReason = 2131165215;
 			
 			// aapt resource value: 0x7f070020
-			public const int lblReason = 2131165216;
-			
-			// aapt resource value: 0x7f070021
-			public const int lblReasonPicker = 2131165217;
-			
-			// aapt resource value: 0x7f07002e
-			public const int lblSeen = 2131165230;
+			public const int lblReasonPicker = 2131165216;
 			
 			// aapt resource value: 0x7f07002d
-			public const int lblSenderMessage = 2131165229;
+			public const int lblSeen = 2131165229;
 			
 			// aapt resource value: 0x7f07002c
-			public const int lblSenderName = 2131165228;
+			public const int lblSenderMessage = 2131165228;
+			
+			// aapt resource value: 0x7f07002b
+			public const int lblSenderName = 2131165227;
 			
 			// aapt resource value: 0x7f07000e
 			public const int light = 2131165198;
+			
+			// aapt resource value: 0x7f07001a
+			public const int lstvwNotifications = 2131165210;
 			
 			// aapt resource value: 0x7f070019
 			public const int map = 2131165209;
@@ -552,29 +552,29 @@ namespace gladostwenty.droid
 			// aapt resource value: 0x7f070005
 			public const int satellite = 2131165189;
 			
-			// aapt resource value: 0x7f070029
-			public const int snrBusy = 2131165225;
+			// aapt resource value: 0x7f070028
+			public const int snrBusy = 2131165224;
 			
-			// aapt resource value: 0x7f07002a
-			public const int snrNumberBusy = 2131165226;
+			// aapt resource value: 0x7f070029
+			public const int snrNumberBusy = 2131165225;
 			
 			// aapt resource value: 0x7f07000a
 			public const int standard = 2131165194;
 			
-			// aapt resource value: 0x7f070027
-			public const int swtAttachLocation = 2131165223;
+			// aapt resource value: 0x7f070026
+			public const int swtAttachLocation = 2131165222;
 			
-			// aapt resource value: 0x7f070028
-			public const int swtBusy = 2131165224;
+			// aapt resource value: 0x7f070027
+			public const int swtBusy = 2131165223;
 			
 			// aapt resource value: 0x7f070006
 			public const int terrain = 2131165190;
 			
-			// aapt resource value: 0x7f07002f
-			public const int textView4 = 2131165231;
+			// aapt resource value: 0x7f07002e
+			public const int textView4 = 2131165230;
 			
-			// aapt resource value: 0x7f070025
-			public const int txtNotes = 2131165221;
+			// aapt resource value: 0x7f070024
+			public const int txtNotes = 2131165220;
 			
 			// aapt resource value: 0x7f07000b
 			public const int wide = 2131165195;
@@ -621,28 +621,25 @@ namespace gladostwenty.droid
 			public const int MapView = 2130903043;
 			
 			// aapt resource value: 0x7f030004
-			public const int NotificationListItem = 2130903044;
+			public const int NotificationListView = 2130903044;
 			
 			// aapt resource value: 0x7f030005
-			public const int NotificationListView = 2130903045;
+			public const int OnRequestView = 2130903045;
 			
 			// aapt resource value: 0x7f030006
-			public const int OnRequestView = 2130903046;
+			public const int RequestStatusView = 2130903046;
 			
 			// aapt resource value: 0x7f030007
-			public const int RequestStatusView = 2130903047;
+			public const int SplashScreen = 2130903047;
 			
 			// aapt resource value: 0x7f030008
-			public const int SplashScreen = 2130903048;
+			public const int StatusItemLayout = 2130903048;
 			
 			// aapt resource value: 0x7f030009
-			public const int StatusItemLayout = 2130903049;
+			public const int TabView = 2130903049;
 			
 			// aapt resource value: 0x7f03000a
-			public const int TabView = 2130903050;
-			
-			// aapt resource value: 0x7f03000b
-			public const int UserItemLayout = 2130903051;
+			public const int UserItemLayout = 2130903050;
 			
 			static Layout()
 			{

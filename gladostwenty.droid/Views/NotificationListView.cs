@@ -17,11 +17,15 @@ namespace gladostwenty.droid.Views {
     public class NotificationListView : MvxActivity {
 
 
+
         protected override void OnCreate(Bundle bundle) {
             base.OnCreate(bundle);
-            var contactsAdapter = new ContactsAdapter(this);
-            var contactsListView = FindViewById<ListView>(Resource.Id.ContactsListView);
-            contactsListView.Adapter = contactsAdapter;
+            //listView = FindViewById<ListView>(Resource.Id.lstvwNotifications); // get reference to the ListView in the layout
+            //                                                                   // populate the listview with data
+            //tableItems = new List<TableItem>();
+            //tableItems.Add(new TableItem { ContactName = "test", test1 = "test1", test2 = "test2" });
+            //listView.Adapter = new HomeScreenAdapter(this, tableItems);
+            ////listView.ItemClick += OnListItemClick;  // to be defined
             SetContentView(Resource.Layout.NotificationListView);
         }
     }

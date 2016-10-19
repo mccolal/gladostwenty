@@ -7,6 +7,10 @@
     <Mvx.MvxListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:id="@+id/lstvwNotifications"
         local:MvxItemTemplate="@layout/statusitemlayout"
-        local:MvxBind="ItemsSource StatusList; ItemClick SelectedNotificationCommand" />
+        local:MvxBind="ItemsSource PresentedStatusList"
+        />
+
+
 </LinearLayout>
