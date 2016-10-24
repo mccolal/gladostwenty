@@ -8,6 +8,7 @@ using gladostwenty.core.Models;
 using gladostwenty.core.Services;
 using MvvmCross.Platform;
 using System.Windows.Input;
+using Android.Widget;
 
 namespace gladostwenty.core.ViewModels
 {
@@ -72,16 +73,20 @@ namespace gladostwenty.core.ViewModels
         }
 
 
-        private string _message = "";
+        private string _message = " ";
         public string Message
         {
             get { return _message; }
             set
             {
-                if (value != null && value != _message)
+                if (value != _message)
                 {
                     _message = value;
                     RaisePropertyChanged(() => Message);
+                }
+                else if (value == null)
+                {
+                    _message = " ";
                 }
             }
         }
@@ -91,8 +96,13 @@ namespace gladostwenty.core.ViewModels
         public OnRequestViewModel()
         {
             SendReply = new MvxCommand(() => {
-                Mvx.Resolve<IAzureDataService>().SendStatus(Info.FromId, CurrentUser.id, Message, false);
-                
+                try
+                {
+                    Mvx.Resolve<IAzureDataService>().SendStatus(Info.FromId, CurrentUser.id, Message, false);
+                } catch (Exception e)
+                {
+                }
+                ShowViewModel<TabViewModel>();
             });
         }
     }
