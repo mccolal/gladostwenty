@@ -45,7 +45,10 @@ namespace gladostwenty.droid.Views {
             spec.SetContent(this.CreateIntentFor(TabViewModel.Notifications));
             TabHost.AddTab(spec);
 
-
+            for (int i = 0; i < TabHost.TabWidget.ChildCount; i++)
+            {
+                TabHost.TabWidget.GetChildAt(i).SetPadding(40, 40, 40, 40);
+            }
         }
     }
 }
