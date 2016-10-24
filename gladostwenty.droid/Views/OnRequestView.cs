@@ -12,7 +12,7 @@ using gladostwenty.droid.Views;
 
 namespace gladostwenty.Droid.Views
 {
-    [Activity(Label = "OnRequest", ParentActivity = typeof(NotificationListView))]
+    [Activity(Label = "Status Request", ParentActivity = typeof(NotificationListView))]
     public class OnRequestView : MvxActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)

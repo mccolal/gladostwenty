@@ -13,7 +13,7 @@ using MvvmCross.Droid.Views;
 using gladostwenty.core.ViewModels;
 
 namespace gladostwenty.droid.Views {
-    [Activity(Label = "View for TabViewModel")]
+    [Activity(Label = "Glados")]
     public class TabView : MvxTabActivity {
         protected TabViewModel TabViewModel {
             get { return base.ViewModel as TabViewModel; }
@@ -45,7 +45,10 @@ namespace gladostwenty.droid.Views {
             spec.SetContent(this.CreateIntentFor(TabViewModel.Notifications));
             TabHost.AddTab(spec);
 
-
+            for (int i = 0; i < TabHost.TabWidget.ChildCount; i++)
+            {
+                TabHost.TabWidget.GetChildAt(i).SetPadding(40, 40, 40, 40);
+            }
         }
     }
 }
