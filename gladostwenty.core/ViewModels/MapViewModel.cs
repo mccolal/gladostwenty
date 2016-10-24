@@ -39,5 +39,22 @@ namespace gladostwenty.core.ViewModels
         {
             moveToLocation = MoveToLocation;
         }
+
+        public void OpenStatus(StatusListItem s)
+        {
+            ShowViewModel<RequestStatusViewModel>(
+                    new OnRequestViewModel.StatusInfo
+                    {
+                        id = s.Status.id,
+                        ToId = s.Status.ToId,
+                        FromId = s.Status.FromId,
+                        Message = s.Status.Message,
+                        Seen = s.Status.Seen,
+                        Lat = s.Status.Lat,
+                        Long = s.Status.Long,
+                        Request = s.Status.Request,
+                        Name = s.Contact.FullName
+                    });
+        }
     }
 }

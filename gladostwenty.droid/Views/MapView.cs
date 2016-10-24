@@ -28,6 +28,7 @@ namespace gladostwenty.droid.Views
         private delegate IOnMapReadyCallback OnMapReadyCallback();
         private GoogleMap map;
         MapViewModel vm;
+        private Dictionary<string, StatusListItem> markers = new Dictionary<string, StatusListItem>(); 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -43,13 +44,8 @@ namespace gladostwenty.droid.Views
             map = googleMap;
             map.MyLocationEnabled = true;
             map.MyLocationChange += Map_MyLocationChange;
-            map.MapLongClick += Map_MapClick;
+            map.InfoWindowClick += Map_OnInfoWindowClick;
             UpdateStatusList();
-        }
-
-        private void Map_MapClick(object sender, GoogleMap.MapLongClickEventArgs e)
-        {
-            AddPin(new GeoLocation(e.Point.Latitude, e.Point.Longitude));
         }
 
         private void Map_MyLocationChange(object sender, GoogleMap.MyLocationChangeEventArgs e)
@@ -71,6 +67,12 @@ namespace gladostwenty.droid.Views
             map.MoveCamera(cameraUpdate);
         }
 
+        private void Map_OnInfoWindowClick (object sender, GoogleMap.InfoWindowClickEventArgs e)
+        {
+            Marker marker = e.Marker;
+            vm.OpenStatus(markers[marker.Id]);
+        }
+
         private void AddPin(GeoLocation location)
         {
             var markerOptions = new MarkerOptions();
@@ -80,7 +82,7 @@ namespace gladostwenty.droid.Views
             map.AddMarker(markerOptions);
         }
 
-        private void AddPin(StatusListItem status)
+        private Marker AddPin(StatusListItem status)
         {
             if (null != status.Status.Lat || null != status.Status.Lat)
             {
@@ -88,9 +90,10 @@ namespace gladostwenty.droid.Views
                 markerOptions.SetPosition(new LatLng(double.Parse(status.Status.Lat), double.Parse(status.Status.Long)));
                 markerOptions.SetTitle(string.Format(status.Contact.FullName));
                 markerOptions.SetSnippet(string.Format(status.Status.Message));
-                map.AddMarker(markerOptions);
+                Marker m = map.AddMarker(markerOptions);
+                return m;
             }
-
+            return null;
         }
 
         private async void UpdateStatusList()
@@ -103,7 +106,7 @@ namespace gladostwenty.droid.Views
             {
                 var statusItem = new StatusListItem { Status = status, Contact = await Mvx.Resolve<IAzureDataService>().GetUser(status.FromId) };
                 StatusList.Add(statusItem);
-                AddPin(statusItem);
+                markers.Add(AddPin(statusItem).Id, statusItem);
             }
         }
     }
