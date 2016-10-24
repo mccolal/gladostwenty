@@ -49,21 +49,16 @@
         android:textSize="58px"
         android:id="@+id/lblMessage"
         local:MvxBind="Text Info.Message" />
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/space2"
-        android:layout_marginBottom="37.0dp" />
-    <TextView
-        android:text="Text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView4" />
+  <Space
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:id="@+id/space2" />
     <ImageView
         android:src="@drawable/ic_pin_drop_black"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:id="@+id/imageView2"
         android:layout_gravity="center_horizontal"
-        android:gravity="center_vertical" />
+        android:gravity="center_vertical" 
+        local:MvxBind="Click GoToMap"/>
 </LinearLayout>

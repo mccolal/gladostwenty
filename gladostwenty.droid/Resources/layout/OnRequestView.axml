@@ -8,26 +8,26 @@
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:id="@+id/imageView1" />
-    <TextView
+        <TextView
         android:id="@+id/label"
-        android:layout_width="fill_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="50dp"
         android:layout_toRightOf="@id/imageView1"
         android:textSize="48px"
         android:textColor="#212121"
         android:text="Contact 1"
         local:MvxBind="Text Info.Name" />
-    <TextView
+  <TextView
         android:id="@+id/label2"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_toRightOf="@id/imageView1"
+        android:layout_marginTop="50dp"
+        android:layout_toRightOf="@id/label"
         android:textSize="48px"
         android:textColor="#212121"
-        android:layout_below="@id/label"
-        android:text="Contact 1 is requesting your status" />
+        android:text=" is requesting your status" />
+
     <TextView
         android:id="@+id/lblBusy"
         android:layout_width="wrap_content"
@@ -153,5 +153,5 @@
         android:layout_marginTop="40dp"
         android:layout_below="@id/lblAttachLocation"
         android:enabled="true"
-        local:MvxBind="Click SendReply"/>
+        local:MvxBind="Click SendReply" />
 </RelativeLayout>
