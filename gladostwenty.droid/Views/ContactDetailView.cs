@@ -13,7 +13,7 @@ using MvvmCross.Droid.Views;
 
 namespace gladostwenty.droid.Views {
 
-    [Activity(Label ="Contact Detail", ParentActivity = typeof(FirstView))]
+    [Activity(Label ="Contact Details", ParentActivity = typeof(FirstView))]
     public class ContactDetailView : MvxActivity {
 
         protected override void OnCreate(Bundle bundle) {

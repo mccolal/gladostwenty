@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace gladostwenty.core.ViewModels {
     public class RequestStatusViewModel : MvxViewModel {
@@ -47,6 +48,14 @@ namespace gladostwenty.core.ViewModels {
         public void Init(StatusInfo statusInfo) {
             Info = statusInfo;
 
+        }
+
+        public ICommand GoToMap { get; set; }
+        public RequestStatusViewModel()
+        {
+            GoToMap = new MvxCommand(() => {     
+                ShowViewModel<MapViewModel>();             
+            });
         }
     }
 }

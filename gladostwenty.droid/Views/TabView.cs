@@ -13,7 +13,7 @@ using MvvmCross.Droid.Views;
 using gladostwenty.core.ViewModels;
 
 namespace gladostwenty.droid.Views {
-    [Activity(Label = "View for TabViewModel")]
+    [Activity(Label = "Glados")]
     public class TabView : MvxTabActivity {
         protected TabViewModel TabViewModel {
             get { return base.ViewModel as TabViewModel; }
