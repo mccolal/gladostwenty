@@ -122,10 +122,14 @@ namespace gladostwenty.core.ViewModels
             get { return _message; }
             set
             {
-                if (value != null && value != _message)
+                if (value != _message)
                 {
                     _message = value;
                     RaisePropertyChanged(() => Message);
+                }
+                else if (value == null)
+                {
+                    _message = " ";
                 }
             }
         }
@@ -135,8 +139,14 @@ namespace gladostwenty.core.ViewModels
         public OnRequestViewModel()
         {
             SendReply = new MvxCommand(() => {
-                Mvx.Resolve<IAzureDataService>().SendStatus(Info.FromId, CurrentUser.id, Message, false, Lat, Long);
-                
+                try
+                {
+                    Mvx.Resolve<IAzureDataService>().SendStatus(Info.FromId, CurrentUser.id, Message, false, Lat, Long);
+                }
+                catch (Exception e)
+                {
+                }
+                ShowViewModel<TabViewModel>();
             });
         }
     }

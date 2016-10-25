@@ -68,7 +68,7 @@
         android:layout_marginLeft="25dp"
         android:layout_marginTop="45dp"
         android:textSize="38px"
-        android:text="Available In" />
+        android:text="Available In Hours" />
     <TextView
         android:id="@+id/lblAvailableInPicker"
         android:layout_width="fill_parent"

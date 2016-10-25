@@ -116,10 +116,21 @@ namespace gladostwenty.Droid.Views
 
         private void spinner_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)
         {
+            
             Spinner spinner = (Spinner)sender;
+            TextView txtView;
+            
+            if (spinner.Id == Resource.Id.snrNumberBusy)
+            {
+                 txtView = FindViewById<TextView>(Resource.Id.lblAvailableInPicker);
+            } else
+            {
+                txtView = FindViewById<TextView>(Resource.Id.lblReasonPicker);
+            }
+            txtView.Text = string.Format("{0}", spinner.GetItemAtPosition(e.Position));
 
-            string toast = string.Format("{0}", spinner.GetItemAtPosition(e.Position));
-            Toast.MakeText(this, toast, ToastLength.Long).Show();
+            //string toast = string.Format("{0}", spinner.GetItemAtPosition(e.Position));
+            //Toast.MakeText(this, toast, ToastLength.Long).Show();
         }
 
     }
