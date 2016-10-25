@@ -99,13 +99,15 @@ namespace gladostwenty.droid.Services {
 
 
 
-        public async void SendStatus(string to, string from, string msg, bool request) {
+        public async void SendStatus(string to, string from, string msg, bool request, string lat, string lng) {
             Dictionary<string, string> param = new Dictionary<string, string>();
 
             param.Add("to", to);
             param.Add("from", from);
             param.Add("msg", msg);
             param.Add("req", request ? "r" : "s");
+            param.Add("lat", lat);
+            param.Add("lng", lng);
 
             CancellationTokenSource cts = new CancellationTokenSource();
            

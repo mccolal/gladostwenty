@@ -11,15 +11,20 @@ using Android.Views;
 using Android.Widget;
 
 using MvvmCross.Droid.Views;
+using Android.Locations;
 
 namespace gladostwenty.droid.Views {
     [Activity(Label = "Status Response", ParentActivity = typeof(OutBoundReplyView))]
-    public class RequestStatusView : MvxActivity{
+    public class RequestStatusView : MvxActivity {
+
 
         protected override void OnCreate(Bundle bundle) {
             base.OnCreate(bundle);
 
             SetContentView(Resource.Layout.RequestStatusView);
         }
+
+       
+
     }
 }

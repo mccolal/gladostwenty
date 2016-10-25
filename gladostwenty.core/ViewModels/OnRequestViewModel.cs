@@ -13,6 +13,22 @@ namespace gladostwenty.core.ViewModels
 {
     public class OnRequestViewModel : MvxViewModel
     {
+
+        private GeoLocation myLocation;
+        public GeoLocation MyLocation
+        {
+            get { return myLocation; }
+            set { myLocation = value; }
+        }
+
+        public void OnMyLocationChanged(double Lati, double Longi)
+        {
+            string _lat = Lati.ToString();
+            string _long = Longi.ToString();
+            Lat = _lat;
+            Long = _long;
+        }
+
         public class StatusInfo
         {
 
@@ -57,6 +73,34 @@ namespace gladostwenty.core.ViewModels
             Name = Info.Name.ToString();
         }
 
+        private string _lat = "";
+        public string Lat
+        {
+            get { return _lat; }
+            set
+            {
+                if (value != null && value != _lat)
+                {
+                    _lat = value;
+                    RaisePropertyChanged(() => Lat);
+                }
+            }
+        }
+
+        private string _long = "";
+        public string Long
+        {
+            get { return _long; }
+            set
+            {
+                if (value != null && value != _long)
+                {
+                    _long = value;
+                    RaisePropertyChanged(() => Long);
+                }
+            }
+        }
+
         private string _name = "";
         public string Name
         {
@@ -91,7 +135,7 @@ namespace gladostwenty.core.ViewModels
         public OnRequestViewModel()
         {
             SendReply = new MvxCommand(() => {
-                Mvx.Resolve<IAzureDataService>().SendStatus(Info.FromId, CurrentUser.id, Message, false);
+                Mvx.Resolve<IAzureDataService>().SendStatus(Info.FromId, CurrentUser.id, Message, false, Lat, Long);
                 
             });
         }

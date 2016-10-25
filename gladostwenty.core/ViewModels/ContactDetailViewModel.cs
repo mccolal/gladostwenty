@@ -57,7 +57,7 @@ namespace gladostwenty.core.ViewModels {
 
         public ContactDetailViewModel() {
             SendRequestCommand = new MvxCommand(() => {
-                Mvx.Resolve<IAzureDataService>().SendStatus(Contact.Id, CurrentUser.id, "Test", true);
+                Mvx.Resolve<IAzureDataService>().SendStatus(Contact.Id, CurrentUser.id, "Test", true, null, null);
             });
             
         }

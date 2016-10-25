@@ -498,9 +498,6 @@ namespace gladostwenty.droid
 			// aapt resource value: 0x7f07001d
 			public const int label2 = 2131165213;
 			
-			// aapt resource value: 0x7f070025
-			public const int lblAttachLocation = 2131165221;
-			
 			// aapt resource value: 0x7f070021
 			public const int lblAvailableIn = 2131165217;
 			
@@ -542,6 +539,9 @@ namespace gladostwenty.droid
 			
 			// aapt resource value: 0x7f07000e
 			public const int light = 2131165198;
+			
+			// aapt resource value: 0x7f070025
+			public const int location_text = 2131165221;
 			
 			// aapt resource value: 0x7f07001a
 			public const int lstvwNotifications = 2131165210;

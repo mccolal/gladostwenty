@@ -102,11 +102,20 @@ namespace gladostwenty.droid.Views
             var Statuses = new ObservableCollection<Status>(await dataService.GetStatusTable());
             var StatusList = new ObservableCollection<StatusListItem>();
 
-            foreach (Status status in Statuses)
+            if (Statuses != null)
             {
-                var statusItem = new StatusListItem { Status = status, Contact = await Mvx.Resolve<IAzureDataService>().GetUser(status.FromId) };
-                StatusList.Add(statusItem);
-                markers.Add(AddPin(statusItem).Id, statusItem);
+                foreach (Status status in Statuses)
+                {
+                    var statusItem = new StatusListItem { Status = status, Contact = await Mvx.Resolve<IAzureDataService>().GetUser(status.FromId) };
+                    if (statusItem != null)
+                    {
+                        StatusList.Add(statusItem);
+                        if (statusItem.Status.Lat != null && statusItem.Status.Long != null)
+                        {
+                            markers.Add(AddPin(statusItem).Id, statusItem);
+                        }
+                    }
+                }
             }
         }
     }
