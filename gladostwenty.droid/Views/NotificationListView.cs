@@ -22,8 +22,6 @@ namespace gladostwenty.droid.Views {
         protected override void OnCreate(Bundle bundle) {
             base.OnCreate(bundle);
             SetContentView(Resource.Layout.NotificationListView);
-
-            //((NotificationListViewModel)ViewModel).Initialize();
         }
     }
 }
