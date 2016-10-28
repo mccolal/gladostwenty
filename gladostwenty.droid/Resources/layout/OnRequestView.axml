@@ -8,7 +8,7 @@
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:id="@+id/imageView1" />
-        <TextView
+    <TextView
         android:id="@+id/label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -18,7 +18,7 @@
         android:textColor="#212121"
         android:text="Contact 1"
         local:MvxBind="Text Info.Name" />
-  <TextView
+    <TextView
         android:id="@+id/label2"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -27,7 +27,6 @@
         android:textSize="48px"
         android:textColor="#212121"
         android:text=" is requesting your status" />
-
     <TextView
         android:id="@+id/lblBusy"
         android:layout_width="wrap_content"
@@ -117,7 +116,8 @@
         android:layout_below="@id/lblNote"
         android:layout_marginLeft="200dp"
         android:layout_marginTop="65dp"
-        android:id="@+id/swtAttachLocation" />
+        android:id="@+id/swtAttachLocation"
+        local:MvxBind="Checked SendLocation"/>
     <Switch
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
