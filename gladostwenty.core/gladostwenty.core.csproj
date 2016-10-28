@@ -50,6 +50,7 @@
     <Compile Include="Services\StatusCollectionService.cs" />
     <Compile Include="ViewModels\ContactDetailViewModel.cs" />
     <Compile Include="ViewModels\FirstViewModel.cs" />
+    <Compile Include="Models\imgURL.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\MapViewModel.cs" />
     <Compile Include="ViewModels\NotificationListViewModel.cs" />
