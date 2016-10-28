@@ -431,6 +431,9 @@ namespace gladostwenty.droid
 			// aapt resource value: 0x7f020037
 			public const int telstralogo = 2130837559;
 			
+			// aapt resource value: 0x7f020038
+			public const int TelstraMarker = 2130837560;
+			
 			static Drawable()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();

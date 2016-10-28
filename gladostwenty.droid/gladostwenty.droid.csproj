@@ -255,6 +255,7 @@
     <AndroidResource Include="Resources\drawable\ic_cloud_upload.png" />
     <AndroidResource Include="Resources\drawable\ic_cloud_download.png" />
     <AndroidResource Include="Resources\drawable\ic_pin_drop_black.png" />
+    <AndroidResource Include="Resources\drawable\TelstraMarker.png" />
     <Content Include="ToDo-MvvmCross\_ Droid UI.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
