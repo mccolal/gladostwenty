@@ -43,7 +43,7 @@ namespace gladostwenty.droid.Services {
 
             await InitLocalStoreAsync();
             //await SyncStatusAsync();
-            await SyncUsersAsync();
+            //await SyncUsersAsync();
 
             return Client;
         }

@@ -62,9 +62,16 @@ namespace gladostwenty.core.ViewModels
         private async void InitDataStorage() {
             var dataService = Mvx.Resolve<IAzureDataService>();
             await dataService.Initialize();
+            BackgroundUserLoad();
             Users = new ObservableCollection<User>(await dataService.GetUserTable());
             Statuses = new ObservableCollection<Status>(await dataService.GetStatusTable());
             Loading = false;
+        }
+
+        private async void BackgroundUserLoad() {
+            var dataService = Mvx.Resolve<IAzureDataService>();
+            await dataService.SyncUsersAsync();
+            Users = new ObservableCollection<User>(await dataService.GetUserTable());
         }
     }
 }
