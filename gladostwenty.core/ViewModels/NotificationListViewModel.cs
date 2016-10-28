@@ -1,6 +1,4 @@
-﻿using Android;
-using Android.Content.Res;
-using gladostwenty.core.Models;
+﻿using gladostwenty.core.Models;
 using gladostwenty.core.Services;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Platform;
