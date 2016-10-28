@@ -98,23 +98,24 @@ namespace gladostwenty.core.ViewModels
 
             foreach (Status status in Statuses)
             {
+                imgURL ImageUrl = new imgURL();
+                ImageUrl.imgurl = "";
                 if (status.Request)
                 {
-                    stats.Add(new StatusListItem { Status = status, Contact = await Mvx.Resolve<IAzureDataService>().GetUser(status.FromId) });
+                    if (status.Seen)
+                    {
+                        ImageUrl.imgurl = "https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-open.png";
+                    }
+                    else
+                    {
+                        ImageUrl.imgurl = "https://cdn2.iconfinder.com/data/icons/ui-1/57/18-512.png";
+                    }
+                    stats.Add(new StatusListItem { Status = status, Contact = await Mvx.Resolve<IAzureDataService>().GetUser(status.FromId), imgUrl = ImageUrl });
                 }
-                
             }
             StatusList = new ObservableCollection<StatusListItem>(stats);
             Loading = false;
         }
-
-        public class StatusListItem
-        {
-            public User Contact { get; set; }
-
-            public Status Status { get; set; }
-        }
-        
     }
 
 }

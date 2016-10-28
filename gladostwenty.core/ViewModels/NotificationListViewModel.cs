@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using static Android.Resource;
 
 namespace gladostwenty.core.ViewModels
 {
@@ -43,6 +44,8 @@ namespace gladostwenty.core.ViewModels
                 UpdateStatusList();
             }
         }
+
+
 
         private ObservableCollection<StatusListItem> statusList;
         public ObservableCollection<StatusListItem> StatusList
@@ -79,6 +82,7 @@ namespace gladostwenty.core.ViewModels
                         Request = s.Status.Request,
                         Name = s.Contact.FullName
                     });
+                //CODE TO SET TO SEEN
             });
             
         }
@@ -96,10 +100,12 @@ namespace gladostwenty.core.ViewModels
         {
             StatusList = new ObservableCollection<StatusListItem>();
             var stats = new List<StatusListItem>();
-            imgURL ImageUrl = new imgURL();
+            
 
             foreach (Status status in Statuses)
             {
+                imgURL ImageUrl = new imgURL();
+                ImageUrl.imgurl = "";
                 if (!status.Request)
                 {
                     if (status.Seen)
@@ -117,14 +123,7 @@ namespace gladostwenty.core.ViewModels
         }
     }
 
-    public class StatusListItem
-    {
-        public User Contact { get; set; }
 
-        public Status Status { get; set; }
-
-        public imgURL imgUrl { get; set; }
-    }
 
     
 }

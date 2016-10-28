@@ -117,9 +117,16 @@ namespace gladostwenty.Droid.Views
             }
             Log.Debug(TAG, "Using " + _locationProvider + ".");
             _currentLocation = _locationManager.GetLastKnownLocation(LocationManager.GpsProvider);
-            //_locationText.Text = string.Format("{0:f6},{1:f6}", _currentLocation.Latitude, _currentLocation.Longitude);
-            _locationText.Text = "-2,-2";
-            //vm.OnMyLocationChanged(_currentLocation.Latitude, _currentLocation.Longitude);
+            try
+            {
+                _locationText.Text = string.Format("{0:f6},{1:f6}", _currentLocation.Latitude, _currentLocation.Longitude);
+                vm.OnMyLocationChanged(_currentLocation.Latitude, _currentLocation.Longitude);
+            }
+            catch (Exception e)
+            {
+                _locationText.Text = "0,0";
+            }
+            
         }
 
 
