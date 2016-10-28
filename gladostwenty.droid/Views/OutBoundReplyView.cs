@@ -21,7 +21,6 @@ namespace gladostwenty.droid.Views
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.OutBoundReply);
-           // ((OutBoundReplyViewModel)ViewModel).Initialize();
         }
     }
 }

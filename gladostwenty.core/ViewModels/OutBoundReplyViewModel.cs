@@ -16,6 +16,18 @@ namespace gladostwenty.core.ViewModels
     public class OutBoundReplyViewModel : MvxViewModel
     {
 
+        private bool loading = true;
+
+        public bool Loading {
+            get {
+                return loading;
+            }
+            set {
+                loading = value;
+                RaisePropertyChanged(() => Loading);
+            }
+        }
+
 
         private ObservableCollection<Status> statuses;
 
@@ -93,7 +105,7 @@ namespace gladostwenty.core.ViewModels
                 
             }
             StatusList = new ObservableCollection<StatusListItem>(stats);
-            
+            Loading = false;
         }
 
         public class StatusListItem

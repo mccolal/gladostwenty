@@ -8,16 +8,11 @@ using gladostwenty.core.Models;
 using gladostwenty.core.Services;
 using MvvmCross.Platform;
 using System.Windows.Input;
-using Android.App;
 
 namespace gladostwenty.core.ViewModels
 {
     public class OnRequestViewModel : MvxViewModel
     {
-        public interface IMvxAndroidCurrentTopActivity
-        {
-            Activity Activity { get; }
-        }
 
         private GeoLocation myLocation;
         public GeoLocation MyLocation
@@ -120,17 +115,6 @@ namespace gladostwenty.core.ViewModels
             }
         }
 
-        private bool _sendLocation = true;
-
-        public bool SendLocation
-        {
-            get { return _sendLocation; }
-            set
-            {
-                _sendLocation = value;
-            }
-        }
-
 
         private string _message = "";
         public string Message
@@ -152,35 +136,21 @@ namespace gladostwenty.core.ViewModels
 
         public ICommand SendReply { get; set; }
 
-        private bool _isBusy;
-        public bool IsBusy
-        {
-            get { return _isBusy; }
-            set { _isBusy = value; RaisePropertyChanged(() => IsBusy); }
-        }
-        
-
         public OnRequestViewModel()
         {
-            SendReply = new MvxCommand(async () =>
-            {
-                try
-                {
-                    if (!SendLocation)
-                    {
-                        Lat = null;
-                        Long = null;
-                    }
-                    IsBusy = true;
-                    await Task.Delay(1000);
-                    Mvx.Resolve<IAzureDataService>().SendStatus(Info.FromId, CurrentUser.id, Message, false, Lat, Long);
-
-                }
-                catch (Exception e)
-                {
-                }
-                ShowViewModel<TabViewModel>();
+            SendReply = new MvxCommand(() => {
+                AttemptStatusSend();
             });
         }
+
+        private async void AttemptStatusSend() {
+            try {
+                await Mvx.Resolve<IAzureDataService>().SendStatus(Info.FromId, CurrentUser.id, Message, false, Lat, Long);
+                TabViewModel.TabHolder.Notifications.Initialize();
+            } catch (Exception e) {
+            }
+            ShowViewModel<TabViewModel>();
+        }
     }
+
 }
