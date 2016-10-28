@@ -139,15 +139,18 @@ namespace gladostwenty.core.ViewModels
         public OnRequestViewModel()
         {
             SendReply = new MvxCommand(() => {
-                try
-                {
-                    Mvx.Resolve<IAzureDataService>().SendStatus(Info.FromId, CurrentUser.id, Message, false, Lat, Long);
-                }
-                catch (Exception e)
-                {
-                }
-                ShowViewModel<TabViewModel>();
+                AttemptStatusSend();
             });
         }
+
+        private async void AttemptStatusSend() {
+            try {
+                await Mvx.Resolve<IAzureDataService>().SendStatus(Info.FromId, CurrentUser.id, Message, false, Lat, Long);
+                TabViewModel.TabHolder.Notifications.Initialize();
+            } catch (Exception e) {
+            }
+            ShowViewModel<TabViewModel>();
+        }
     }
+
 }

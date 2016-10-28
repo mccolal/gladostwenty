@@ -76,7 +76,7 @@ namespace gladostwenty.droid.Services {
 
 
 
-        public async void SendStatus(string to, string from, string msg, bool request, string lat, string lng) {
+        public async Task SendStatus(string to, string from, string msg, bool request, string lat, string lng) {
             Dictionary<string, string> param = new Dictionary<string, string>();
 
             param.Add("to", to);
