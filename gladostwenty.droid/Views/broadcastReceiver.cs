@@ -42,6 +42,8 @@ namespace gladostwenty
         public PushHandlerService() : base(Constants.SenderID)
         {
             Log.Info(MyBroadcastReceiver.TAG, "PushHandlerService() constructor");
+
+
         }
 
 
@@ -49,9 +51,6 @@ namespace gladostwenty
         {
             Log.Verbose(MyBroadcastReceiver.TAG, "GCM Registered: " + registrationId);
             RegistrationID = registrationId;
-
-            createNotification("PushHandlerService-GCM Registered...",
-                                "The device has been Registered!");
 
             Hub = new NotificationHub(Constants.NotificationHubName, Constants.ListenConnectionString,
                                         context);
@@ -90,16 +89,23 @@ namespace gladostwenty
             }
 
             string messageText = intent.Extras.GetString("message");
-            if (!string.IsNullOrEmpty(messageText))
-            {
-                createNotification("New hub message!", messageText);
-            }
-            else
-            {
-                createNotification("Unknown message details", msg.ToString());
-            }
             TabViewModel.TabHolder.Notifications.Initialize();
             TabViewModel.TabHolder.OutboundReply.Initialize();
+
+            Notification.Builder builder = new Notification.Builder(this)
+                .SetContentTitle("Glados")
+                .SetContentText(messageText)
+                .SetDefaults(NotificationDefaults.All)
+                .SetCategory(Notification.CategorySocial)
+                .SetVisibility(NotificationVisibility.Public)
+                .SetPriority((int)NotificationPriority.High)
+                .SetSmallIcon(droid.Resource.Drawable.Icon);
+
+            Notification notification = builder.Build();
+            NotificationManager notificationManager = GetSystemService(Context.NotificationService) as NotificationManager;
+
+            const int notificationId = 0;
+            notificationManager.Notify(notificationId, notification);
         }
 
 
@@ -131,8 +137,6 @@ namespace gladostwenty
         protected override void OnUnRegistered(Context context, string registrationId)
         {
             Log.Verbose(MyBroadcastReceiver.TAG, "GCM Unregistered: " + registrationId);
-
-            createNotification("GCM Unregistered...", "The device has been unregistered!");
         }
 
         protected override bool OnRecoverableError(Context context, string errorId)
