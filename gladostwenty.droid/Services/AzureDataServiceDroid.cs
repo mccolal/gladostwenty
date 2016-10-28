@@ -107,12 +107,13 @@ namespace gladostwenty.droid.Services {
             param.Add("from", from);
             param.Add("msg", msg);
             param.Add("req", request ? "r" : "s");
-            param.Add("lat", lat);
-            param.Add("lng", lng);
+            param.Add("lat", lat == null ? "" : lat);
+            param.Add("lng", lng == null ? "" : lng);
 
             CancellationTokenSource cts = new CancellationTokenSource();
            
-            await Client.InvokeApiAsync("StatusAPI", HttpMethod.Post, param, cts.Token);
+            var a = await Client.InvokeApiAsync("StatusAPI", HttpMethod.Post, param, cts.Token);
+            var b = a;
         }
 
         /// <summary>
