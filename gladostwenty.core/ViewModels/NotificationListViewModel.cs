@@ -14,6 +14,19 @@ namespace gladostwenty.core.ViewModels
 {
     public class NotificationListViewModel : MvxViewModel
     {
+
+        private bool loading = true;
+
+        public bool Loading {
+            get {
+                return loading;
+            }
+            set {
+                loading = value;
+                RaisePropertyChanged(() => Loading);
+            }
+        }
+
         private ObservableCollection<Status> statuses;
 
         public ObservableCollection<Status> Statuses
@@ -91,6 +104,7 @@ namespace gladostwenty.core.ViewModels
                 }
             }
             StatusList = new ObservableCollection<StatusListItem>(stats);
+            Loading = false;
         }
     }
 

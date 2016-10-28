@@ -4,13 +4,17 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <ProgressBar
+        android:id="@+id/progressBar1"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        local:MvxBind="Visible Loading" />
     <Mvx.MvxListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/lstvwNotifications"
         local:MvxItemTemplate="@layout/statusitemlayout"
-        local:MvxBind="ItemsSource StatusList; ItemClick OpenInbox"
-        />
-
-
+        local:MvxBind="ItemsSource StatusList; ItemClick OpenInbox" />
 </LinearLayout>
