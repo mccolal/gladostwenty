@@ -7,6 +7,7 @@ using Android.Util;
 using Gcm.Client;
 using WindowsAzure.Messaging;
 using gladostwenty.droid.Views;
+using gladostwenty.core.ViewModels;
 
 [assembly: Permission(Name = "@PACKAGE_NAME@.permission.C2D_MESSAGE")]
 [assembly: UsesPermission(Name = "@PACKAGE_NAME@.permission.C2D_MESSAGE")]
@@ -97,6 +98,8 @@ namespace gladostwenty
             {
                 createNotification("Unknown message details", msg.ToString());
             }
+            TabViewModel.TabHolder.Notifications.Initialize();
+            TabViewModel.TabHolder.OutboundReply.Initialize();
         }
 
 

@@ -10,8 +10,11 @@ using System.Windows.Input;
 namespace gladostwenty.core.ViewModels {
     public class TabViewModel : MvxViewModel{
 
+        public static TabViewModel TabHolder { get; private set; }
+
         private IGeoCoder geocoder;
         public TabViewModel() {
+            TabHolder = this;
             Contacts = new FirstViewModel();
             Map = new MapViewModel(geocoder);
 
