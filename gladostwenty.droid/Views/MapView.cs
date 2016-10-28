@@ -58,7 +58,7 @@ namespace gladostwenty.droid.Views
             
         }
 
-        private void MoveToLocation(GeoLocation geoLocation, float zoom = 18)
+        private void MoveToLocation(GeoLocation geoLocation, float zoom = 12)
         {
             CameraPosition.Builder builder = CameraPosition.InvokeBuilder();
             builder.Target(new LatLng(geoLocation.Latitude, geoLocation.Longitude));
@@ -93,6 +93,7 @@ namespace gladostwenty.droid.Views
                 markerOptions.SetPosition(new LatLng(double.Parse(status.Status.Lat), double.Parse(status.Status.Long)));
                 markerOptions.SetTitle(string.Format(status.Contact.FullName));
                 markerOptions.SetSnippet(string.Format(status.Status.Message));
+                markerOptions.SetIcon(BitmapDescriptorFactory.FromResource(Resource.Drawable.TelstraMarker));
                 Marker m = map.AddMarker(markerOptions);
                 return m;
             }
