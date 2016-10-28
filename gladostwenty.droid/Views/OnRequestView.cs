@@ -13,6 +13,7 @@ using Android.Locations;
 using System.Threading.Tasks;
 using Android.Util;
 using gladostwenty.core.ViewModels;
+using MvvmCross.Binding.BindingContext;
 
 namespace gladostwenty.Droid.Views
 {
@@ -30,6 +31,7 @@ namespace gladostwenty.Droid.Views
         Location _currentLocation;
         LocationManager _locationManager;
         OnRequestViewModel vm;
+        BindableProgress _bindableProgress;
 
         string _locationProvider;
         TextView _locationText;
@@ -59,6 +61,12 @@ namespace gladostwenty.Droid.Views
             // Location stuff
             _locationText = FindViewById<TextView>(Resource.Id.location_text);
             InitialiseLocationManager();
+
+            _bindableProgress = new BindableProgress(this);
+
+            var set = this.CreateBindingSet<OnRequestView, OnRequestViewModel>();
+            set.Bind(_bindableProgress).For(p => p.Visible).To(vm => vm.IsBusy);
+            set.Apply();
 
             // Create your application here
         }
@@ -113,6 +121,7 @@ namespace gladostwenty.Droid.Views
             _locationText.Text = "-2,-2";
             //vm.OnMyLocationChanged(_currentLocation.Latitude, _currentLocation.Longitude);
         }
+
 
 
         private void spinner_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)

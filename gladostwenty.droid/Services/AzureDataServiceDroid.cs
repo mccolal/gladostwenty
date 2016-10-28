@@ -34,6 +34,7 @@ namespace gladostwenty.droid.Services {
 
         public async void Initialize() {
             Client = new MobileServiceClient("http://hywglados.azurewebsites.net");
+
             CurrentPlatform.Init();
             
             UserTable = Client.GetSyncTable<User>();
@@ -99,6 +100,7 @@ namespace gladostwenty.droid.Services {
         /// <param name="id">The Id of the user</param>
         /// <returns>A status object representing the user's last status</returns>
         public async Task<Status> GetUserStatus(string id) {
+
 
             var query = (await GetStatusTable()).Where(u => u.FromId == id && u.ToId == CurrentUser.id && u.Request == false);
             

@@ -143,8 +143,33 @@ namespace gladostwenty.core.ViewModels
             });
         }
 
+        private bool _sendLocation = true;
+
+        public bool SendLocation
+        {
+            get { return _sendLocation; }
+            set
+            {
+                _sendLocation = value;
+            }
+        }
+
+        private bool _isBusy;
+        public bool IsBusy
+        {
+            get { return _isBusy; }
+            set { _isBusy = value; RaisePropertyChanged(() => IsBusy); }
+        }
+
         private async void AttemptStatusSend() {
             try {
+                if (!SendLocation)
+                {
+                    Lat = null;
+                    Long = null;
+                }
+                IsBusy = true;
+                //await Task.Delay(1000);
                 await Mvx.Resolve<IAzureDataService>().SendStatus(Info.FromId, CurrentUser.id, Message, false, Lat, Long);
                 TabViewModel.TabHolder.Notifications.Initialize();
             } catch (Exception e) {

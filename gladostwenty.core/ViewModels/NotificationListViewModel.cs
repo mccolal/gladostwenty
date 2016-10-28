@@ -1,4 +1,6 @@
-﻿using gladostwenty.core.Models;
+﻿using Android;
+using Android.Content.Res;
+using gladostwenty.core.Models;
 using gladostwenty.core.Services;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Platform;
@@ -51,12 +53,11 @@ namespace gladostwenty.core.ViewModels
             }
             set
             {
-                SetProperty(ref statusList, value);
+                statusList = value; RaisePropertyChanged(() => StatusList);
+            
             }
         }
 
-
-        
         public ICommand OpenInbox { get; set; }
         
         public NotificationListViewModel()
@@ -95,12 +96,20 @@ namespace gladostwenty.core.ViewModels
         {
             StatusList = new ObservableCollection<StatusListItem>();
             var stats = new List<StatusListItem>();
+            imgURL ImageUrl = new imgURL();
 
             foreach (Status status in Statuses)
             {
                 if (!status.Request)
                 {
-                    stats.Add(new StatusListItem { Status = status, Contact = await Mvx.Resolve<IAzureDataService>().GetUser(status.FromId) });
+                    if (status.Seen)
+                    {
+                        ImageUrl.imgurl = "https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-open.png";
+                    } else
+                    {
+                        ImageUrl.imgurl = "https://cdn2.iconfinder.com/data/icons/ui-1/57/18-512.png";
+                    }
+                    stats.Add(new StatusListItem { Status = status, Contact = await Mvx.Resolve<IAzureDataService>().GetUser(status.FromId), imgUrl = ImageUrl });
                 }
             }
             StatusList = new ObservableCollection<StatusListItem>(stats);
@@ -113,5 +122,9 @@ namespace gladostwenty.core.ViewModels
         public User Contact { get; set; }
 
         public Status Status { get; set; }
+
+        public imgURL imgUrl { get; set; }
     }
+
+    
 }
