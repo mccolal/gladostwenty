@@ -14,10 +14,6 @@ namespace gladostwenty.core.ViewModels
 {
     public class NotificationListViewModel : MvxViewModel
     {
-
-
-
-
         private ObservableCollection<Status> statuses;
 
         public ObservableCollection<Status> Statuses
@@ -52,7 +48,7 @@ namespace gladostwenty.core.ViewModels
         
         public NotificationListViewModel()
         {
-
+            Initialize();
 
             OpenInbox = new MvxCommand<StatusListItem>((s) =>
             {

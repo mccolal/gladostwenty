@@ -45,6 +45,7 @@ namespace gladostwenty.droid.Views
             map.MyLocationEnabled = true;
             map.MyLocationChange += Map_MyLocationChange;
             map.InfoWindowClick += Map_OnInfoWindowClick;
+            //map.AnimateCamera(CameraUpdateFactory.NewLatLngZoom(new LatLng(map.Location.Latitude, e.Location.Longitude), 16));
             UpdateStatusList();
         }
 
@@ -54,6 +55,7 @@ namespace gladostwenty.droid.Views
             var location = new GeoLocation(e.Location.Latitude, e.Location.Longitude, e.Location.Altitude);
             MoveToLocation(location);
             vm.OnMyLocationChanged(location);
+            
         }
 
         private void MoveToLocation(GeoLocation geoLocation, float zoom = 18)
@@ -84,7 +86,8 @@ namespace gladostwenty.droid.Views
 
         private Marker AddPin(StatusListItem status)
         {
-            if (null != status.Status.Lat || null != status.Status.Lat)
+            if (null != status.Status.Lat || null != status.Status.Lat 
+                && status.Status.Lat != string.Empty && status.Status.Long != string.Empty)
             {
                 var markerOptions = new MarkerOptions();
                 markerOptions.SetPosition(new LatLng(double.Parse(status.Status.Lat), double.Parse(status.Status.Long)));
@@ -110,7 +113,8 @@ namespace gladostwenty.droid.Views
                     if (statusItem != null)
                     {
                         StatusList.Add(statusItem);
-                        if (statusItem.Status.Lat != null && statusItem.Status.Long != null)
+                        if (statusItem.Status.Lat != null && statusItem.Status.Long != null 
+                            && statusItem.Status.Lat != string.Empty && statusItem.Status.Long != string.Empty)
                         {
                             markers.Add(AddPin(statusItem).Id, statusItem);
                         }

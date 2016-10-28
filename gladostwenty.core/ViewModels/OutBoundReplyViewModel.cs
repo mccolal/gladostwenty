@@ -49,6 +49,9 @@ namespace gladostwenty.core.ViewModels
 
         public OutBoundReplyViewModel()
         {
+
+            Initialize();
+
             ReplyToRequest = new MvxCommand<StatusListItem>((s) =>
             {
                 ShowViewModel<OnRequestViewModel>(
