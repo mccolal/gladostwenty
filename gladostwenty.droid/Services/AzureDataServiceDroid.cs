@@ -27,8 +27,6 @@ namespace gladostwenty.droid.Services {
 
         private IMobileServiceSyncTable<User> UserTable { get; set; }
 
-        //private IMobileServiceSyncTable<Status> StatusTable { get; set; }
-
         public Task<List<User>> GetUserTable() {
 
             return UserTable.Where(u => u.id != CurrentUser.id).ToListAsync();
@@ -38,12 +36,9 @@ namespace gladostwenty.droid.Services {
             Client = new MobileServiceClient("http://hywglados.azurewebsites.net");
             CurrentPlatform.Init();
             
-            //StatusTable = Client.GetSyncTable<Status>();
             UserTable = Client.GetSyncTable<User>();
 
             await InitLocalStoreAsync();
-            //await SyncStatusAsync();
-            //await SyncUsersAsync();
 
             return Client;
         }
@@ -57,7 +52,6 @@ namespace gladostwenty.droid.Services {
             }
 
             var store = new MobileServiceSQLiteStore(path);
-            //store.DefineTable<Status>();
             store.DefineTable<User>();
 
             await Client.SyncContext.InitializeAsync(store);
@@ -72,26 +66,10 @@ namespace gladostwenty.droid.Services {
             }
         }
 
-        /*public async Task SyncStatusAsync() {
-            try {
-                
-                await Client.SyncContext.PushAsync();
-                await StatusTable.PullAsync("stats" , StatusTable.Where(u => u.ToId == CurrentUser.id));
-            } catch(Exception e) {
-                Console.WriteLine(e.ToString());
-                
-            }
-        }*/
-
         public async Task<List<Status>> GetStatusTable() {
 
 
-            var a =  await Client.GetTable<Status>().Where(u => u.ToId == CurrentUser.id).ToListAsync();
-            return a;
-
-            //var a = await StatusTable.Where(u => u.ToId == CurrentUser.id).ToListAsync();
-
-            //return a;
+            return await Client.GetTable<Status>().Where(u => u.ToId == CurrentUser.id).ToListAsync();
         }
 
         public async Task<User> GetUser(string id) {
@@ -112,8 +90,7 @@ namespace gladostwenty.droid.Services {
 
             CancellationTokenSource cts = new CancellationTokenSource();
            
-            var a = await Client.InvokeApiAsync("StatusAPI", HttpMethod.Post, param, cts.Token);
-            var b = a;
+            await Client.InvokeApiAsync("StatusAPI", HttpMethod.Post, param, cts.Token);
         }
 
         /// <summary>
