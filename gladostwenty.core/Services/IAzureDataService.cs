@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace gladostwenty.core.Services {
     public interface IAzureDataService {
 
-        Task<MobileServiceClient> Initialize();
+        void Initialize();
 
         Task<List<User>> GetUserTable();
 

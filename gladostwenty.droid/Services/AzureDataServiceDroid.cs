@@ -32,15 +32,13 @@ namespace gladostwenty.droid.Services {
             return UserTable.Where(u => u.id != CurrentUser.id).ToListAsync();
         }
 
-        public async Task<MobileServiceClient> Initialize() {
+        public async void Initialize() {
             Client = new MobileServiceClient("http://hywglados.azurewebsites.net");
             CurrentPlatform.Init();
             
             UserTable = Client.GetSyncTable<User>();
 
             await InitLocalStoreAsync();
-
-            return Client;
         }
 
         public async Task InitLocalStoreAsync() {
