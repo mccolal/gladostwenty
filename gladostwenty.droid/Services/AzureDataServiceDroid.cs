@@ -27,7 +27,7 @@ namespace gladostwenty.droid.Services {
 
         private IMobileServiceSyncTable<User> UserTable { get; set; }
 
-        private IMobileServiceSyncTable<Status> StatusTable { get; set; }
+        //private IMobileServiceSyncTable<Status> StatusTable { get; set; }
 
         public Task<List<User>> GetUserTable() {
 
@@ -38,11 +38,11 @@ namespace gladostwenty.droid.Services {
             Client = new MobileServiceClient("http://hywglados.azurewebsites.net");
             CurrentPlatform.Init();
             
-            StatusTable = Client.GetSyncTable<Status>();
+            //StatusTable = Client.GetSyncTable<Status>();
             UserTable = Client.GetSyncTable<User>();
 
             await InitLocalStoreAsync();
-            await SyncStatusAsync();
+            //await SyncStatusAsync();
             await SyncUsersAsync();
 
             return Client;
@@ -57,7 +57,7 @@ namespace gladostwenty.droid.Services {
             }
 
             var store = new MobileServiceSQLiteStore(path);
-            store.DefineTable<Status>();
+            //store.DefineTable<Status>();
             store.DefineTable<User>();
 
             await Client.SyncContext.InitializeAsync(store);
@@ -72,7 +72,7 @@ namespace gladostwenty.droid.Services {
             }
         }
 
-        public async Task SyncStatusAsync() {
+        /*public async Task SyncStatusAsync() {
             try {
                 
                 await Client.SyncContext.PushAsync();
@@ -81,12 +81,13 @@ namespace gladostwenty.droid.Services {
                 Console.WriteLine(e.ToString());
                 
             }
-        }
+        }*/
 
         public async Task<List<Status>> GetStatusTable() {
 
 
-            return await Client.GetTable<Status>().Where(u => u.ToId == CurrentUser.id).ToListAsync();
+            var a =  await Client.GetTable<Status>().Where(u => u.ToId == CurrentUser.id).ToListAsync();
+            return a;
 
             //var a = await StatusTable.Where(u => u.ToId == CurrentUser.id).ToListAsync();
 
@@ -123,9 +124,9 @@ namespace gladostwenty.droid.Services {
         /// <returns>A status object representing the user's last status</returns>
         public async Task<Status> GetUserStatus(string id) {
 
-            var query = StatusTable.Where(u => u.FromId == id && u.ToId == CurrentUser.id && u.Request == false);
-
-            var result = await query.ToListAsync();
+            var query = (await GetStatusTable()).Where(u => u.FromId == id && u.ToId == CurrentUser.id && u.Request == false);
+            
+            var result = query.ToList();
 
             if(result == null || result.Count <= 0) {
                 return null;
