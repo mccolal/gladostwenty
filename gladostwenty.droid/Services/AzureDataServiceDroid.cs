@@ -86,11 +86,11 @@ namespace gladostwenty.droid.Services {
         public async Task<List<Status>> GetStatusTable() {
 
 
-            //return await Client.GetTable<Status>().Where(u => u.ToId == CurrentUser.id).ToListAsync();
+            return await Client.GetTable<Status>().Where(u => u.ToId == CurrentUser.id).ToListAsync();
 
-            var a = await StatusTable.Where(u => u.ToId == CurrentUser.id).ToListAsync();
+            //var a = await StatusTable.Where(u => u.ToId == CurrentUser.id).ToListAsync();
 
-            return a;
+            //return a;
         }
 
         public async Task<User> GetUser(string id) {

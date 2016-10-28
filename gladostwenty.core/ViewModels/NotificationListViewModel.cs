@@ -70,12 +70,10 @@ namespace gladostwenty.core.ViewModels
                         Name = s.Contact.FullName
                     });
             });
-
-            Initialize();
             
         }
 
-        private async void Initialize()
+        public async void Initialize()
         {
 
             var dataService = Mvx.Resolve<IAzureDataService>();

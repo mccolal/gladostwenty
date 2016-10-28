@@ -10,6 +10,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using MvvmCross.Droid.Views;
+using gladostwenty.core.ViewModels;
 
 namespace gladostwenty.droid.Views {
 
@@ -27,6 +28,8 @@ namespace gladostwenty.droid.Views {
             //listView.Adapter = new HomeScreenAdapter(this, tableItems);
             ////listView.ItemClick += OnListItemClick;  // to be defined
             SetContentView(Resource.Layout.NotificationListView);
+
+            ((NotificationListViewModel)ViewModel).Initialize();
         }
     }
 }

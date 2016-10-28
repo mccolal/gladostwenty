@@ -10,6 +10,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using MvvmCross.Droid.Views;
+using gladostwenty.core.ViewModels;
 
 namespace gladostwenty.droid.Views
 {
@@ -20,7 +21,7 @@ namespace gladostwenty.droid.Views
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.OutBoundReply);
-            // Create your application here
+            ((OutBoundReplyViewModel)ViewModel).Initialize();
         }
     }
 }
