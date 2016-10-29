@@ -124,6 +124,7 @@ namespace gladostwenty.Droid.Views
             }
             catch (Exception e)
             {
+                Log.Debug(TAG, e.ToString());
                 _locationText.Text = "0,0";
             }
             

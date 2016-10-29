@@ -22,6 +22,30 @@ namespace gladostwenty.droid.Views
         }
 
         private ProgressDialog _dialog;
+        private ProgressDialog _sendRequestDialog;
+
+
+        public bool SendRequestDialogVisible
+        {
+            get { return _sendRequestDialog != null; }
+            set
+            {
+                if (value == SendRequestDialogVisible)
+                    return;
+
+                if (value)
+                {
+                    _sendRequestDialog = new ProgressDialog(_context);
+                    _sendRequestDialog.SetTitle("Requesting...");
+                    _sendRequestDialog.Show();
+                }
+                else
+                {
+                    _sendRequestDialog.Hide();
+                    _sendRequestDialog = null;
+                }
+            }
+        }
 
         public bool Visible
         {

@@ -9,7 +9,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using static Android.Resource;
 
 namespace gladostwenty.core.ViewModels
 {
@@ -65,7 +64,7 @@ namespace gladostwenty.core.ViewModels
         {
             Initialize();
 
-            OpenInbox = new MvxCommand<StatusListItem>((s) =>
+            OpenInbox = new MvxCommand<StatusListItem>( (s) =>
             {
                 ShowViewModel<RequestStatusViewModel>(
                     new OnRequestViewModel.StatusInfo
@@ -80,7 +79,8 @@ namespace gladostwenty.core.ViewModels
                         Request = s.Status.Request,
                         Name = s.Contact.FullName
                     });
-                //CODE TO SET TO SEEN
+                //Code to change Seen to True, does not work.
+                //await Mvx.Resolve<IAzureDataService>().UpdateSeen(s.Status.id, "true");
             });
             
         }

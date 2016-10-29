@@ -75,6 +75,18 @@ namespace gladostwenty.droid.Services {
             return await UserTable.LookupAsync(id);
         }
 
+        public async Task UpdateSeen(string id, string value)
+        {
+            Dictionary<string, string> param = new Dictionary<string, string>();
+
+            param.Add("id", id);
+            param.Add("seen", value);
+
+            CancellationTokenSource cts = new CancellationTokenSource();
+
+            await Client.InvokeApiAsync("StatusAPI", HttpMethod.Put, param, cts.Token);
+        }
+
 
 
         public async Task SendStatus(string to, string from, string msg, bool request, string lat, string lng) {

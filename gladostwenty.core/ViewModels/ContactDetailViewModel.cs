@@ -54,10 +54,20 @@ namespace gladostwenty.core.ViewModels {
             Contact = contact;
             LoadLatestStatus();
         }
+        private bool _awaitingRequest;
+        public bool AwaitingRequest
+        {
+            get { return _awaitingRequest; }
+            set { _awaitingRequest = value; RaisePropertyChanged(() => AwaitingRequest); }
+        }
+
 
         public ContactDetailViewModel() {
-            SendRequestCommand = new MvxCommand(() => {
-                Mvx.Resolve<IAzureDataService>().SendStatus(Contact.Id, CurrentUser.id, "Test", true, null, null);
+            SendRequestCommand = new MvxCommand(async () =>
+            {
+                AwaitingRequest = true;
+                await Mvx.Resolve<IAzureDataService>().SendStatus(Contact.Id, CurrentUser.id, "Test", true, null, null);
+                AwaitingRequest = false;
             });
             
         }

@@ -18,9 +18,9 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:textColor="#212121"
+        android:textSize="48px"
         android:layout_marginLeft="25dp"
         android:layout_marginTop="10dp"
-        android:textSize="48px"
         local:MvxBind="Text Contact.FirstName" />
     <TextView
         android:id="@+id/lblLastName"
@@ -42,9 +42,7 @@
         android:layout_marginTop="10dp"
         android:textSize="48px"
         local:MvxBind="Text Contact.LastName" />
-  
-  
-    <!-- Groups not implemented
+<!-- Groups not implemented
     <TextView
         android:id="@+id/lblGroup"
         android:layout_width="wrap_content"
@@ -82,9 +80,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/lblEmail"
         android:textColor="#212121"
+        android:textSize="48px"
         android:layout_marginLeft="25dp"
         android:layout_marginTop="10dp"
-        android:textSize="48px"
         local:MvxBind="Text Contact.Email" />
     <TextView
         android:id="@+id/lblContactNumber"
@@ -102,42 +100,44 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/lblContactNumber"
         android:textColor="#212121"
+        android:textSize="48px"
         android:layout_marginLeft="25dp"
         android:layout_marginTop="10dp"
-        android:textSize="48px"
         local:MvxBind="Text Contact.Phone" />
-
-      <GridLayout
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="10dp"
+        android:text="Last Status Received:  16/10/2016" />
+<!--<TextView
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="25dp"
+      android:layout_marginTop="10dp"
+      android:text="16/10/2016" />-->
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="10dp"
+        android:textColor="#212121"
+        android:textSize="48px"
+        local:MvxBind="Text Status.Message" />
+<!--<GridLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="10dp"
         android:columnCount="2"
-        android:rowCount="2">
-        
-        <TextView
-          android:layout_height="wrap_content"
-          android:layout_weight="1"
-          android:text="Last Status"
-        />
-
-        <TextView
-          android:layout_height="wrap_content"
-          android:layout_weight="1"
-          android:text="16/10/2016"
-        />
-
-        <TextView
-          android:layout_height="wrap_content"
-          android:layout_weight="2"
-          local:MvxBind="Text Status.Message"/>
-        
-      </GridLayout>
-      
-      
-      <Button
+        android:rowCount="2" />-->
+    <Button
         android:id="@+id/btnRequest"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="right"
         local:MvxBind="Click SendRequestCommand"
         android:text="Send Request" />
 </LinearLayout>
