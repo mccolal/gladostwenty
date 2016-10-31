@@ -447,6 +447,9 @@ namespace gladostwenty.droid
 		public partial class Id
 		{
 			
+			// aapt resource value: 0x7f070031
+			public const int InnerRelativeLayout = 2131165233;
+			
 			// aapt resource value: 0x7f070000
 			public const int MvvmCrossTagId = 2131165184;
 			
@@ -492,8 +495,8 @@ namespace gladostwenty.droid
 			// aapt resource value: 0x7f07001b
 			public const int imageView1 = 2131165211;
 			
-			// aapt resource value: 0x7f070030
-			public const int imageView2 = 2131165232;
+			// aapt resource value: 0x7f070032
+			public const int imageView2 = 2131165234;
 			
 			// aapt resource value: 0x7f07001c
 			public const int label = 2131165212;
@@ -522,6 +525,9 @@ namespace gladostwenty.droid
 			// aapt resource value: 0x7f070011
 			public const int lblLastName = 2131165201;
 			
+			// aapt resource value: 0x7f070025
+			public const int lblLocation = 2131165221;
+			
 			// aapt resource value: 0x7f07002e
 			public const int lblMessage = 2131165230;
 			
@@ -543,14 +549,14 @@ namespace gladostwenty.droid
 			// aapt resource value: 0x7f07000e
 			public const int light = 2131165198;
 			
-			// aapt resource value: 0x7f070025
-			public const int location_text = 2131165221;
-			
 			// aapt resource value: 0x7f07001a
 			public const int lstvwNotifications = 2131165210;
 			
 			// aapt resource value: 0x7f070019
 			public const int map = 2131165209;
+			
+			// aapt resource value: 0x7f07002f
+			public const int message = 2131165231;
 			
 			// aapt resource value: 0x7f070003
 			public const int none = 2131165187;
@@ -573,8 +579,8 @@ namespace gladostwenty.droid
 			// aapt resource value: 0x7f07002d
 			public const int space1 = 2131165229;
 			
-			// aapt resource value: 0x7f07002f
-			public const int space2 = 2131165231;
+			// aapt resource value: 0x7f070030
+			public const int space2 = 2131165232;
 			
 			// aapt resource value: 0x7f07000a
 			public const int standard = 2131165194;

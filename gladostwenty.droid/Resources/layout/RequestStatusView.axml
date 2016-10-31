@@ -1,64 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:local="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_centerInParent="true">
-    <ImageView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+   <ImageView
         android:src="@android:drawable/ic_menu_gallery"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:id="@+id/imageView1"
-        android:layout_gravity="center_horizontal"
-        android:gravity="center_vertical" />
-    <TextView
-        android:text="Contact One"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/lblSenderName"
-        android:layout_marginRight="0.0dp"
-        android:gravity="center"
-        android:textSize="92px"
-        android:textStyle="bold"
-        local:MvxBind="Text Info.Name" />
-    <TextView
-        android:text="Has Replied!"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:id="@+id/lblhasReplied"
-        android:textSize="72px" />
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/space1"
-        android:layout_marginBottom="32.5dp" />
-    <TextView
-        android:text="Message Received:"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:textSize="72px"
-        android:id="@+id/lblMessage" />
-    <TextView
-        android:text="Hello June I am Just around the corner."
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:textSize="58px"
-        android:id="@+id/lblMessage"
-        local:MvxBind="Text Info.Message" />
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/space2" />
+        android:layout_centerHorizontal="true"
+        android:id="@+id/imageView1"/>
+  <TextView
+      android:text="Contact One"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:id="@+id/lblSenderName"
+      android:layout_below="@id/imageView1"
+      android:gravity="center_horizontal"
+      android:textSize="24sp"
+      android:textColor="#212121"
+      android:textStyle="bold"
+      local:MvxBind="Text Info.Name" />
+  <TextView
+      android:text="Has Replied!"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:gravity="center_horizontal"
+      android:id="@+id/lblhasReplied"
+      android:layout_below="@id/lblSenderName"
+      android:textColor="#212121"
+      android:textSize="16sp" />
+  <Space
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/lblhasReplied"
+      android:id="@+id/space1"
+      android:layout_marginBottom="32.5dp" />
+  <TextView
+      android:text="Message Received:"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/space1"
+      android:textColor="#212121"
+      android:gravity="center"
+      android:textSize="16sp"
+      android:id="@+id/lblMessage" />
+  <TextView
+      android:text="Hello June I am Just around the corner."
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:gravity="center_horizontal"
+      android:textSize="14sp"
+      android:textColor="#212121"
+      android:layout_below="@id/lblMessage"
+      android:id="@+id/message"
+      local:MvxBind="Text Info.Message" />
+  <Space
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/message"
+      android:id="@+id/space2" />
+  <RelativeLayout
+    android:id="@+id/InnerRelativeLayout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:layout_centerHorizontal="true">
     <ImageView
-        android:src="@drawable/ic_pin_drop_black"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:id="@+id/imageView2"
-        android:layout_gravity="center_horizontal"
-        android:gravity="center_vertical"
-        local:MvxBind="Click GoToMap" />
-</LinearLayout>
+          android:src="@drawable/ic_pin_drop_black"
+          android:layout_width="100dp"
+          android:layout_height="100dp"
+          android:id="@+id/imageView2"          
+          local:MvxBind="Click GoToMap" />
+  </RelativeLayout>
+</RelativeLayout>

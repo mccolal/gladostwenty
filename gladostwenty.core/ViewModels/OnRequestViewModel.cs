@@ -136,6 +136,7 @@ namespace gladostwenty.core.ViewModels
 
         public ICommand SendReply { get; set; }
 
+
         public OnRequestViewModel()
         {
             

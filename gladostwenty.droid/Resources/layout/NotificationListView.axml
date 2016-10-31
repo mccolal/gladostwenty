@@ -15,6 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/lstvwNotifications"
+        android:gravity="center"
         local:MvxItemTemplate="@layout/statusitemlayout"
         local:MvxBind="ItemsSource StatusList; ItemClick OpenInbox" />
 </LinearLayout>
