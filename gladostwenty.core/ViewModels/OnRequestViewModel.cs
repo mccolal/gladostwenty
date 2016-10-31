@@ -138,6 +138,7 @@ namespace gladostwenty.core.ViewModels
 
         public OnRequestViewModel()
         {
+            
             SendReply = new MvxCommand(() => {
                 AttemptStatusSend();
             });

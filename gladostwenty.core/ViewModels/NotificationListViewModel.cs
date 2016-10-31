@@ -64,7 +64,7 @@ namespace gladostwenty.core.ViewModels
         {
             Initialize();
 
-            OpenInbox = new MvxCommand<StatusListItem>( (s) =>
+            OpenInbox = new MvxCommand<StatusListItem>(  (s) =>
             {
                 ShowViewModel<RequestStatusViewModel>(
                     new OnRequestViewModel.StatusInfo
@@ -80,7 +80,7 @@ namespace gladostwenty.core.ViewModels
                         Name = s.Contact.FullName
                     });
                 //Code to change Seen to True, does not work.
-                //await Mvx.Resolve<IAzureDataService>().UpdateSeen(s.Status.id, "true");
+                
             });
             
         }

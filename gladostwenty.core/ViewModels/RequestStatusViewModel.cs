@@ -1,4 +1,6 @@
-﻿using MvvmCross.Core.ViewModels;
+﻿using gladostwenty.core.Services;
+using MvvmCross.Core.ViewModels;
+using MvvmCross.Platform;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -45,9 +47,10 @@ namespace gladostwenty.core.ViewModels {
                 RaisePropertyChanged(() => Info);
             }
         }
-        public void Init(StatusInfo statusInfo) {
+        public void Init(StatusInfo statusInfo)
+        {
             Info = statusInfo;
-
+            Mvx.Resolve<IAzureDataService>().UpdateSeen(Info.id, "true");
         }
 
         public ICommand GoToMap { get; set; }
