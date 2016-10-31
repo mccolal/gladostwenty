@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using gladostwenty.droid;
 using Android.App;
-using Android.App;
 using Android.OS;
 using MvvmCross.Droid.Views;
 using Android.Widget;
@@ -59,7 +58,6 @@ namespace gladostwenty.Droid.Views
             SpinReason.Adapter = adapterReason;
 
             // Location stuff
-            _locationText = FindViewById<TextView>(Resource.Id.location_text);
             InitialiseLocationManager();
 
             _bindableProgress = new BindableProgress(this);
@@ -74,15 +72,6 @@ namespace gladostwenty.Droid.Views
         public void OnLocationChanged(Location location)
         {
             _currentLocation = location;
-            if (_currentLocation == null)
-            {
-                _locationText.Text = "Unable to determine your location. Try again in a short while.";
-            }
-            else
-            {
-                _locationText.Text = string.Format("{0:f6},{1:f6}", _currentLocation.Latitude, _currentLocation.Longitude);
-                vm.OnMyLocationChanged(_currentLocation.Latitude, _currentLocation.Longitude);
-            }
         }
 
         protected override void OnResume()
@@ -119,13 +108,11 @@ namespace gladostwenty.Droid.Views
             _currentLocation = _locationManager.GetLastKnownLocation(LocationManager.GpsProvider);
             try
             {
-                _locationText.Text = string.Format("{0:f6},{1:f6}", _currentLocation.Latitude, _currentLocation.Longitude);
                 vm.OnMyLocationChanged(_currentLocation.Latitude, _currentLocation.Longitude);
             }
             catch (Exception e)
             {
                 Log.Debug(TAG, e.ToString());
-                _locationText.Text = "0,0";
             }
             
         }
