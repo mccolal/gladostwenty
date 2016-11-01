@@ -28,6 +28,8 @@ namespace gladostwenty.core.ViewModels {
 
             public string Long { get; set; }
 
+            public string Location { get; set; }
+
             public bool Request { get; set; }
 
             public string Name { get; set; }
@@ -50,6 +52,13 @@ namespace gladostwenty.core.ViewModels {
         public void Init(StatusInfo statusInfo)
         {
             Info = statusInfo;
+            if (Info.Long != null && Info.Lat != null)
+            {
+                Info.Location = string.Format("Location: {0}, {1}", Info.Lat, Info.Long);
+            } else
+            {
+                Info.Location = "No Location Attached";
+            }
             Mvx.Resolve<IAzureDataService>().UpdateSeen(Info.id, "true");
         }
 
