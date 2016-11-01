@@ -84,7 +84,8 @@ namespace gladostwenty.droid.Services {
 
             CancellationTokenSource cts = new CancellationTokenSource();
 
-            await Client.InvokeApiAsync("StatusAPI", HttpMethod.Put, param, cts.Token);
+            var a = await Client.InvokeApiAsync("StatusAPI", HttpMethod.Post, param, cts.Token);
+            var c = a;
         }
 
 

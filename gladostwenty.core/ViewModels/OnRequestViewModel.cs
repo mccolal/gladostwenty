@@ -79,7 +79,7 @@ namespace gladostwenty.core.ViewModels
             get { return _lat; }
             set
             {
-                if (value != null && value != _lat)
+                if (value != _lat)
                 {
                     _lat = value;
                     RaisePropertyChanged(() => Lat);
@@ -93,7 +93,7 @@ namespace gladostwenty.core.ViewModels
             get { return _long; }
             set
             {
-                if (value != null && value != _long)
+                if (value != _long)
                 {
                     _long = value;
                     RaisePropertyChanged(() => Long);
