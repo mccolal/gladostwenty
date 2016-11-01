@@ -66,8 +66,15 @@ namespace gladostwenty.core.ViewModels {
         public RequestStatusViewModel()
         {
             GoToMap = new MvxCommand(() => {     
-                ShowViewModel<MapViewModel>();             
-            });
+                ShowViewModel<StatusMapViewModel>(
+                    new StatusMapViewModel.StatusLocation
+                    {
+                        Message = info.Message,
+                        Lat = info.Lat,
+                        Long = info.Long,
+                        Name = info.Name
+                    });
+        });
         }
     }
 }

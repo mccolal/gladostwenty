@@ -189,6 +189,7 @@
     <Compile Include="Views\OutBoundReplyView.cs" />
     <Compile Include="Views\RequestStatusView.cs" />
     <Compile Include="Views\NotificationListView.cs" />
+    <Compile Include="Views\StatusMapView.cs" />
     <Compile Include="Views\TabView.cs" />
   </ItemGroup>
   <ItemGroup>
