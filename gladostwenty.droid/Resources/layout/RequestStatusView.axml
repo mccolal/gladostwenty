@@ -64,23 +64,25 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true">
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp">
         <TextView
-          android:text=""
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:gravity="center_horizontal"
-          android:textSize="14sp"
-          android:textColor="#212121"
-          android:id="@+id/location"
-          local:MvxBind="Text Info.Location" />
+            android:text=""
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"            
+            android:gravity="center_horizontal"
+            android:textSize="14sp"
+            android:textColor="#212121"
+            android:id="@+id/location"
+            local:MvxBind="Text Info.Location" />
         <ImageView
-          android:src="@drawable/ic_pin_drop_black"
-          android:layout_width="100dp"
-          android:layout_height="100dp"
-          android:layout_centerHorizontal="true"
-          android:id="@+id/imageView2"
-          android:layout_below="@id/location"
-          local:MvxBind="Click GoToMap" />
+            android:src="@drawable/ic_pin_drop_black"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:id="@+id/imageView2"
+            android:layout_below="@id/location"
+            local:MvxBind="Click GoToMap" />
     </RelativeLayout>
 </RelativeLayout>
