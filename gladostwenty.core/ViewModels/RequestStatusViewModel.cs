@@ -59,7 +59,8 @@ namespace gladostwenty.core.ViewModels {
         {
             Info = statusInfo;
 
-            Mvx.Resolve<IAzureDataService>().UpdateSeen(Info.id, "true");
+            Mvx.Resolve<IAzureDataService>().UpdateSeen(Info.id, true);
+            TabViewModel.TabHolder.Notifications.Initialize();
         }
 
         public ICommand GoToMap { get; set; }

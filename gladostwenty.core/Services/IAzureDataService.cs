@@ -17,7 +17,7 @@ namespace gladostwenty.core.Services {
 
         Task<User> GetUser(string id);
 
-        Task UpdateSeen(string id, string value);
+        Task UpdateSeen(string id, bool value);
 
         Task SendStatus(string to, string from, string msg, bool request, string lat, string lng);
 

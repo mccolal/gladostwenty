@@ -75,17 +75,27 @@ namespace gladostwenty.droid.Services {
             return await UserTable.LookupAsync(id);
         }
 
-        public async Task UpdateSeen(string id, string value)
+        public async Task UpdateSeen(string id, bool seen)
         {
-            Dictionary<string, string> param = new Dictionary<string, string>();
+            try
+            {
+                Dictionary<string, string> param = new Dictionary<string, string>();
 
-            param.Add("id", id);
-            param.Add("seen", value);
+                //param.Add("id", id);
+                //param.Add("seen", value);
 
-            CancellationTokenSource cts = new CancellationTokenSource();
+                Status status = await Client.GetTable<Status>().LookupAsync(id);
+                status.Seen = seen;
 
-            var a = await Client.InvokeApiAsync("StatusAPI", HttpMethod.Post, param, cts.Token);
-            var c = a;
+                CancellationTokenSource cts = new CancellationTokenSource();
+
+                //var a = await Client.InvokeApiAsync("StatusAPI", HttpMethod.Post, param, cts.Token);
+                await Client.GetTable<Status>().UpdateAsync(status);
+            }
+            catch (Exception e)
+            {
+                var c = e;
+            }
         }
 
 
@@ -125,5 +135,6 @@ namespace gladostwenty.droid.Services {
                 return result.First();
             }
         }
+
     }
 }
