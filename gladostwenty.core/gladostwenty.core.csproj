@@ -58,6 +58,7 @@
     <Compile Include="ViewModels\OnRequestViewModel.cs" />
     <Compile Include="ViewModels\OutBoundReplyViewModel.cs" />
     <Compile Include="ViewModels\RequestStatusViewModel.cs" />
+    <Compile Include="ViewModels\StatusMapViewModel.cs" />
     <Compile Include="ViewModels\TabViewModel.cs" />
   </ItemGroup>
   <ItemGroup>

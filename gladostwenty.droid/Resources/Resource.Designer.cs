@@ -495,8 +495,8 @@ namespace gladostwenty.droid
 			// aapt resource value: 0x7f07001b
 			public const int imageView1 = 2131165211;
 			
-			// aapt resource value: 0x7f070032
-			public const int imageView2 = 2131165234;
+			// aapt resource value: 0x7f070033
+			public const int imageView2 = 2131165235;
 			
 			// aapt resource value: 0x7f07001c
 			public const int label = 2131165212;
@@ -548,6 +548,9 @@ namespace gladostwenty.droid
 			
 			// aapt resource value: 0x7f07000e
 			public const int light = 2131165198;
+			
+			// aapt resource value: 0x7f070032
+			public const int location = 2131165234;
 			
 			// aapt resource value: 0x7f07001a
 			public const int lstvwNotifications = 2131165210;

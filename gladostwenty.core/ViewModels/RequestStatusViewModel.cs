@@ -28,6 +28,8 @@ namespace gladostwenty.core.ViewModels {
 
             public string Long { get; set; }
 
+            public string Location { get; set; }
+
             public bool Request { get; set; }
 
             public string Name { get; set; }
@@ -47,9 +49,16 @@ namespace gladostwenty.core.ViewModels {
                 RaisePropertyChanged(() => Info);
             }
         }
+
+        public void setLocation(string location)
+        {
+            Info.Location = location;
+            RaisePropertyChanged(() => Info);
+        }
         public void Init(StatusInfo statusInfo)
         {
             Info = statusInfo;
+
             Mvx.Resolve<IAzureDataService>().UpdateSeen(Info.id, "true");
         }
 
@@ -57,8 +66,15 @@ namespace gladostwenty.core.ViewModels {
         public RequestStatusViewModel()
         {
             GoToMap = new MvxCommand(() => {     
-                ShowViewModel<MapViewModel>();             
-            });
+                ShowViewModel<StatusMapViewModel>(
+                    new StatusMapViewModel.StatusLocation
+                    {
+                        Message = info.Message,
+                        Lat = info.Lat,
+                        Long = info.Long,
+                        Name = info.Name
+                    });
+        });
         }
     }
 }

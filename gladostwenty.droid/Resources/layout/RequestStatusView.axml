@@ -3,73 +3,86 @@
     xmlns:local="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
-   <ImageView
+    <ImageView
         android:src="@android:drawable/ic_menu_gallery"
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:layout_centerHorizontal="true"
-        android:id="@+id/imageView1"/>
-  <TextView
-      android:text="Contact One"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:id="@+id/lblSenderName"
-      android:layout_below="@id/imageView1"
-      android:gravity="center_horizontal"
-      android:textSize="24sp"
-      android:textColor="#212121"
-      android:textStyle="bold"
-      local:MvxBind="Text Info.Name" />
-  <TextView
-      android:text="Has Replied!"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:gravity="center_horizontal"
-      android:id="@+id/lblhasReplied"
-      android:layout_below="@id/lblSenderName"
-      android:textColor="#212121"
-      android:textSize="16sp" />
-  <Space
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:layout_below="@id/lblhasReplied"
-      android:id="@+id/space1"
-      android:layout_marginBottom="32.5dp" />
-  <TextView
-      android:text="Message Received:"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:layout_below="@id/space1"
-      android:textColor="#212121"
-      android:gravity="center"
-      android:textSize="16sp"
-      android:id="@+id/lblMessage" />
-  <TextView
-      android:text="Hello June I am Just around the corner."
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:gravity="center_horizontal"
-      android:textSize="14sp"
-      android:textColor="#212121"
-      android:layout_below="@id/lblMessage"
-      android:id="@+id/message"
-      local:MvxBind="Text Info.Message" />
-  <Space
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:layout_below="@id/message"
-      android:id="@+id/space2" />
-  <RelativeLayout
-    android:id="@+id/InnerRelativeLayout"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_alignParentBottom="true"
-    android:layout_centerHorizontal="true">
-    <ImageView
-          android:src="@drawable/ic_pin_drop_black"
-          android:layout_width="100dp"
-          android:layout_height="100dp"
-          android:id="@+id/imageView2"          
-          local:MvxBind="Click GoToMap" />
-  </RelativeLayout>
+        android:id="@+id/imageView1" />
+    <TextView
+        android:text="Contact One"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lblSenderName"
+        android:layout_below="@id/imageView1"
+        android:gravity="center_horizontal"
+        android:textSize="24sp"
+        android:textColor="#212121"
+        android:textStyle="bold"
+        local:MvxBind="Text Info.Name" />
+    <TextView
+        android:text="Has Replied!"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:id="@+id/lblhasReplied"
+        android:layout_below="@id/lblSenderName"
+        android:textColor="#212121"
+        android:textSize="16sp" />
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lblhasReplied"
+        android:id="@+id/space1"
+        android:layout_marginBottom="32.5dp" />
+    <TextView
+        android:text="Message Received:"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/space1"
+        android:textColor="#212121"
+        android:gravity="center"
+        android:textSize="16sp"
+        android:id="@+id/lblMessage" />
+    <TextView
+        android:text="Hello June I am Just around the corner."
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:textSize="14sp"
+        android:textColor="#212121"
+        android:layout_below="@id/lblMessage"
+        android:id="@+id/message"
+        local:MvxBind="Text Info.Message" />
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/message"
+        android:id="@+id/space2" />
+    <RelativeLayout
+        android:id="@+id/InnerRelativeLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp">
+        <TextView
+            android:text=""
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"            
+            android:gravity="center_horizontal"
+            android:textSize="14sp"
+            android:textColor="#212121"
+            android:id="@+id/location"
+            local:MvxBind="Text Info.Location" />
+        <ImageView
+            android:src="@drawable/ic_pin_drop_black"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:id="@+id/imageView2"
+            android:layout_below="@id/location"
+            local:MvxBind="Click GoToMap" />
+    </RelativeLayout>
 </RelativeLayout>
