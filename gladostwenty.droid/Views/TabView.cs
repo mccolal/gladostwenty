@@ -45,7 +45,7 @@ namespace gladostwenty.droid.Views {
             spec.SetContent(this.CreateIntentFor(TabViewModel.Notifications));
             TabHost.AddTab(spec);
 
-            TabHost.SetCurrentTabByTag("map");
+            TabHost.SetCurrentTabByTag("contacts");
 
             for (int i = 0; i < TabHost.TabWidget.ChildCount; i++)
             {
